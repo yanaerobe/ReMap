@@ -1,0 +1,62 @@
+RangeMapping (7, 32)     : Min Error       = -0.0025529206, Input     =         35
+                         : Max Error       = +0.0018028644, Input     =      28087
+                         : Min Error(%)    = -0.0549741283, Input     =         25
+                         : Max Error(%)    = +0.0285234064, Input     =         55
+
+RangeMapping (7, 11)     : Min Error       = -0.0026281852, Input     =         25
+                         : Max Error       = +0.0018033541, Input     =      19661
+                         : Min Error(%)    = -0.0565948883, Input     =         25
+                         : Max Error(%)    = +0.0272350684, Input     =         55
+
+RangeMapping (7, 10)     : Min Error       = -0.0028911713, Input     =      29867
+                         : Max Error       = +0.0022166622, Input     =      28087
+                         : Min Error(%)    = -0.0565948883, Input     =         25
+                         : Max Error(%)    = +0.0356808541, Input     =         55
+
+RangeMapping (7, 10) (check for boundaries of log2(1+m))
+                         : Min Error       = -0.0028911713, Input     =      29867
+                         : Max Error       = +0.0022166622, Input     =      28087
+                         : Min Error(%)    = -0.0565948883, Input     =         25
+                         : Max Error(%)    = +0.0356808541, Input     =         55
+
+RangeMapping (7, 11) (check for boundaries of log2(1+m))
+                         : Min Error       = -0.0026281852, Input     =         25
+                         : Max Error       = +0.0018033541, Input     =      19661
+                         : Min Error(%)    = -0.0565948883, Input     =         25
+                         : Max Error(%)    = +0.0272350684, Input     =         55
+
+Range Mapping (7, 15) (new)
+                         : Min Error       = -0.0017857845, Input     =      50323
+                         : Max Error       = +0.0017836180, Input     =      37819
+                         : Min Error(%)    = -0.0327075099, Input     =         43
+                         : Max Error(%)    = +0.0437163359, Input     =         13
+
+Range Mapping (7, 14) (new)
+                         : Min Error       = -0.0018023534, Input     =      17613
+                         : Max Error       = +0.0017999061, Input     =      13507
+                         : Min Error(%)    = -0.0327075099, Input     =         43
+                         : Max Error(%)    = +0.0445410373, Input     =         13
+
+Range Mapping (7, 13) (new)
+                         : Min Error       = -0.0018362710, Input     =      29355
+                         : Max Error       = +0.0018141355, Input     =      37819
+                         : Min Error(%)    = -0.0338323196, Input     =         43
+                         : Max Error(%)    = +0.0428916345, Input     =         13
+
+Range Mapping (7, 12) (new)
+                         : Min Error       = -0.0018633886, Input     =      17613
+                         : Max Error       = +0.0018609412, Input     =      13507
+                         : Min Error(%)    = -0.0315827001, Input     =         43
+                         : Max Error(%)    = +0.0461904401, Input     =         13
+
+Range Mapping (7, 11) (new)
+                         : Min Error       = -0.0019583413, Input     =      29355
+                         : Max Error       = +0.0019362058, Input     =      37819
+                         : Min Error(%)    = -0.0360819392, Input     =         43
+                         : Max Error(%)    = +0.0463093036, Input     =          9
+
+Range Mapping (7, 10) (new)
+                         : Min Error       = -0.0021825131, Input     =      50323
+                         : Max Error       = +0.0020869570, Input     =      23637
+                         : Min Error(%)    = -0.0299107540, Input     =         69
+                         : Max Error(%)    = +0.0459279894, Input     =         23

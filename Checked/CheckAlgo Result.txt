@@ -1,0 +1,18 @@
+DeCaro4 (12-bit) : Min Error       = -0.0088141094, Input     =       3647
+                         : Max Error       = +0.0158458441, Input     =       2239
+                         : Min Error(%)    = -0.1136996579, Input     =          7
+                         : Max Error(%)    = +0.1892461616, Input     =        139
+(0.65)
+
+DeCaro4 (14-bit) : Min Error       = -0.0088836628, Input     =      14591
+                         : Max Error       = +0.0159628132, Input     =       8959
+                         : Min Error(%)    = -0.1136996579, Input     =          7
+                         : Max Error(%)    = +0.1892461616, Input     =        139
+(2.17)
+
+DeCaro4 (10-bit) : Min Error       = -0.0085365062, Input     =        911
+                         : Max Error       = +0.0153763478, Input     =        559
+                         : Min Error(%)    = -0.1136996579, Input     =          7
+                         : Max Error(%)    = +0.1892461616, Input     =        139
+(0.16)
+

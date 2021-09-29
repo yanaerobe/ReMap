@@ -1,0 +1,62 @@
+Mitchell                 : Min Error       = +0.0000000000, Input     =          0
+                         : Max Error       = +0.0860713390, Input     = 3098163839
+                         : Min Error(%)    = +0.0000000000, Input     =          0
+                         : Max Error(%)    = +5.3605369643, Input     =          3
+
+Combet (All-bit)         : Min Error       = -0.0061969051, Input     =        320
+                         : Max Error       = +0.0079461791, Input     = 3098163839
+                         : Min Error(%)    = -0.2668861765, Input     =          5
+                         : Max Error(%)    = +0.1849413295, Input     =          9
+
+Abed & Siferd (2-Region) : Min Error       = -0.0183102810, Input     =  218103807 (NA)
+                         : Max Error       = +0.0449250083, Input     = 2415919103 (NA)
+                         : Min Error(%)    = -0.5544294755, Input     =          3
+                         : Max Error(%)    = +0.9298760856, Input     =          7
+
+Abed & Siferd (3-Region) : Min Error       = -0.0207700766, Input     =  234881023 (NA)
+                         : Max Error       = +0.0293000083, Input     = 2415919103 (NA)
+                         : Min Error(%)    = -0.2683674299, Input     =         55
+                         : Max Error(%)    = +0.4313982645, Input     =          3
+
+Abed & Siferd (6-Region) : Min Error       = -0.0129575766, Input     =  234881023 (NA)
+                         : Max Error       = +0.0132440981, Input     = 2281701375 (NA)
+                         : Min Error(%)    = -0.1538156796, Input     =         17 #1
+                         : Max Error(%)    = +0.1528861026, Input     =         43 #2
+
+Hall                     : Min Error       = -0.0081500291, Input     =  671088637 #4 (error--> significant)
+                         : Max Error       = +0.0043571490, Input     = 2959439765 #5 (error--> significant)
+                         : Min Error(%)    = -0.7812500000, Input     =          2 #3
+                         : Max Error(%)    = +0.1258441882, Input     =         11
+
+SanGregory               : Min Error       = -0.0280188097, Input     =  209715199 (NA)
+                         : Max Error       = +0.0293000083, Input     = 2415919103 (NA)
+                         : Min Error(%)    = -1.5402572154, Input     =          3
+                         : Max Error(%)    = +0.4313982645, Input     =          9
+
+Li                       : Min Error       = -0.0430354998, Input     =          2
+                         : Max Error       = +0.0430358393, Input     = 3098163839
+                         : Min Error(%)    = -4.3035499752, Input     =          2 (NA)
+                         : Max Error(%)    = +2.6452992390, Input     =          3 (NA)
+
+Juang                    : Min Error       = -0.0097656229, Input     =  268435455 (NA)
+                         : Max Error       = +0.0369900203, Input     = 2550136831 (NA)
+                         : Min Error(%)    = -0.0964735013, Input     =        511 (NA)
+                         : Max Error(%)    = +1.0789780675, Input     =          5 (NA)
+
+Kim (20-bit simulations) : Min Error       = -0.0015058814, Input     =        352 (NA)
+                         : Max Error       = +0.0020477202, Input     =     138311 (NA)
+                         : Min Error(%)    = -0.0435297335, Input     =         11
+                         : Max Error(%)    = +0.0492633836, Input     =         17
+
+Range Mapping            : Min Error       = -0.0018371136, Input     =     117419
+                         : Max Error       = +0.0018141356, Input     =      75639
+                         : Min Error(%)    = -0.0338323196, Input     =         43
+                         : Max Error(%)    = +0.0428916345, Input     =         13
+
+Remarks:
+ #1: The same value of percentage error is manually computed with Num=17. If we are able to obtain a value which is more negative than the reported one, we can confident say that the reported value is wrong.
+ #2: With remark #1, we believe that this reported value also errorneous. In fact, they are just having the opposite signs. Also, we have plotted the graph which shows that the reported graph is vertically upside down as compared to ours.
+ #3: The same value of percentage error is manually computed with Num=2. If we are able to obtain a value which is more negative than the reported one, we can confident say that the reported value is wrong. Also, as this results is obtained from Abed % Siferd'a paper which reported wrong results for it's algorithm, we believe it is errorneous here as well.
+ #4 and #5: The results obtained by our simulations deviate significantly from the reported results from Hall's paper. Our Min Error is more negative than that of Hall's results and this is explanable. But our Max Error is less positive than that of Hall's results and this may show that our simulations are errorneous.
+
+

@@ -1,0 +1,45 @@
+Mitchell                 : Min Error       = +0.0000000000, Input     =          0
+                         : Max Error       = +0.0860713213, Input     =       2955
+                         : Min Error(%)    = +0.0000000000, Input     =          0
+                         : Max Error(%)    = +5.3605369643, Input     =          3
+
+Combet (All-bit)         : Min Error       = -0.0061969051, Input     =        320
+                         : Max Error       = +0.0079463213, Input     =       2955
+                         : Min Error(%)    = -0.2668861765, Input     =          5
+                         : Max Error(%)    = +0.1849413295, Input     =          9
+
+Abed & Siferd (2-Region) : Min Error       = -0.0182555679, Input     =       3327
+                         : Max Error       = +0.0447869770, Input     =       2303
+                         : Min Error(%)    = -0.5544294755, Input     =          3
+                         : Max Error(%)    = +0.9298760856, Input     =          7
+
+Abed & Siferd (3-Region) : Min Error       = -0.0206843905, Input     =       3583
+                         : Max Error       = +0.0291619770, Input     =       2303
+                         : Min Error(%)    = -0.2683674299, Input     =         55
+                         : Max Error(%)    = +0.4313982645, Input     =          3
+
+Abed & Siferd (6-Region) : Min Error       = -0.0128718905, Input     =       3583
+                         : Max Error       = +0.0130692169, Input     =       2175
+                         : Min Error(%)    = -0.1538156796, Input     =         17
+                         : Max Error(%)    = +0.1528861026, Input     =         43
+
+Hall                     : Min Error       = -0.0080842679, Input     =       2559
+                         : Max Error       = +0.0043571310, Input     =       1411
+                         : Min Error(%)    = -0.7812500000, Input     =          2
+                         : Max Error(%)    = +0.1258441882, Input     =         11
+
+SanGregory               : Min Error       = -0.0279814416, Input     =       3199
+                         : Max Error       = +0.0291619770, Input     =       2303
+                         : Min Error(%)    = -1.5402572154, Input     =          3
+                         : Max Error(%)    = +0.4313982645, Input     =          9
+
+Li                       : Min Error       = -0.0430354998, Input     =          2
+                         : Max Error       = +0.0430358216, Input     =       2955
+                         : Min Error(%)    = -4.3035499752, Input     =          2
+                         : Max Error(%)    = +2.6452992390, Input     =          3
+
+Juang                    : Min Error       = -0.0096296072, Input     =       4095
+                         : Max Error       = +0.0368849593, Input     =       2431
+                         : Min Error(%)    = -0.0964735013, Input     =        511
+                         : Max Error(%)    = +1.0789780675, Input     =          5
+
