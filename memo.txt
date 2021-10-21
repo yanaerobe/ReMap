@@ -1,0 +1,4 @@
+orginal: (m1, m1) 
+mapped: (m2, m2+fi+log2(Gr)+7MSBs)
+
+得用拟合，拟合出original mapped两条线一映射就行了

@@ -1,5 +1,5 @@
 function result = castrARM4(m1)
-%castrated AlgoRamgeMapping4. 
+%castrated AlgoRangeMapping4. 
 %input m1 instead of Num
 %do we need to castrate ifs? LET'S TRY
 

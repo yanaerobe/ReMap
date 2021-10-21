@@ -1,33 +1,45 @@
-%write m1, fm1, m2 and gm2 to a txt
-%do: 
-%   calculate m1/m2, fm1/gm2
-%or: 
-%   fit m1 and fm1 to 4 lines
-%   calculate domain and range ratios
-
 function mappingback 
+format long; 
 
-%FileName = 'MappingBack.txt'; 
-Gr = [2^0+2^-2, 2^0, 2^0-2^-3, 2^0-2^-2]; %1.25, 1, 0.875, 0.75
+Gr = [
+    2^0+2^-2, 2^0+2^-2, 2^0+2^-2, 2^0+2^-2, 2^0+2^-2; 
+    2^0, 2^0, 2^0, 2^0, 2^0; 
+    2^0-2^-3, 2^0-2^-3, 2^0-2^-3, 2^0-2^-3, 2^0-2^-3; 
+    2^0-2^-2, 2^0-2^-2, 2^0-2^-2, 2^0-2^-2, 2^0-2^-2; 
+    ]; %1.25, 1, 0.875, 0.75
+
 m2 = [
-	0.25, 0.34375, 0.53125, 0.5625; 
-    0.25, 0.25, 0.34375, 0.5; 
-	0.3125, 0.3125, 0.34375, 0.53125; 
-    0.3125, 0.3125, 0.34375, 0.5; %forcibly included m1 = 1 into the orginal algo
+	0.25, 0.34375, 0.375, 0.53125, 0.5625; 
+    0.25, 0.25, 0.34375, 0.375, 0.5; 
+	0.3125, 0.3125, 0.34375, 0.375, 0.53125; 
+    0.3125, 0.3125, 0.34375, 0.375, 0.5; %forcibly included m1 = 1 into the orginal algo
 	]; 
 
-for N = (1 : 1 : 4) 
-	m1 = (m2(N,:)+1)/Gr(N) -1; 
-    fm1 = log2(1+m1);
-    for M = (1 : 1 : 4) 
-        gm1(M) = castrARM4(m1(M)); %可能不能用m1，这算出来好像没啥用啊，还是说gm1不对？
+	m1 = (m2+1)./Gr-1; 
+    for N = (1 : 1 : 4) 
+        for M = (1 : 1 : 5) 
+            gm1(N,M) = castrARM4(m1(N,M)); 
+        end
     end
-    x_ratio = m1./m2(N,:); 
-    y_ratio = fm1./gm1; 
-    disp(N); 
-    disp(['m1: ', num2str(m1)]); 
-    disp(['fm1: ', num2str(fm1)]); 
-	disp(['gm1: ', num2str(gm1)]); 
-    disp(['m1/m2: ', num2str(x_ratio)]); 
-    disp(['fm1/gm2: ', num2str(y_ratio)]); 
+    x_ratio = m1./m2; 
+    y_ratio = m1./gm1; 
+    file = 'MappingBack.txt'; 
+    delete(file); 
+    for I = (1 : 1 : 4) 
+        %disp(I); 
+        %disp(['m1: ', num2str(m1(I,:))]); 
+        %disp(['m2: ', num2str(m2(I,:))]); 
+        %disp(['gm1: ', num2str(gm1(I,:))]); 
+        %disp(['m1/m2: ', num2str(x_ratio(I,:))]); 
+        %disp(['fm1/gm2: ', num2str(y_ratio(I,:))]); 
+        fid = fopen(file, 'a'); 
+        fprintf (fid, 'Segment %d :\n', I); 
+        fprintf (fid, 'm1: %s\n', num2str(m1(I,:)) ); 
+        fprintf (fid, 'm2: %s\n', num2str(m2(I,:)) ); 
+        fprintf (fid, 'gm1: %s\n', num2str(gm1(I,:)) ); 
+        fprintf (fid, 'm1/m2: %s\n', num2str(x_ratio(I,:)) ); 
+        fprintf (fid, 'm1/gm2: %s\n', num2str(y_ratio(I,:)) ); 
+        fprintf (fid, '\n'); 
+        fclose('all'); 
+    end 
 end
