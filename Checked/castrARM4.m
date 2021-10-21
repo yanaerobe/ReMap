@@ -87,7 +87,7 @@ else
 end
 
 
-if(m_Corrected >= 1 || m_Corrected <0)
+if(m_Corrected > 1 || m_Corrected <0)
     
     fprintf('WARNING! The corrected Mitchell fraction is greater than 1 or less than 0 which will leads to higher complexity! \n');
     

@@ -12,9 +12,9 @@ Gr = [
 
 m2 = [
 	0.25, 0.34375, 0.375, 0.53125, 0.5625; 
-    0.25, 0.25, 0.34375, 0.375, 0.5; 
-	0.3125, 0.3125, 0.34375, 0.375, 0.53125; 
-    0.3125, 0.3125, 0.34375, 0.375, 0.5; %forcibly included m1 = 1 into the orginal algo
+    0.25, 0.34375, 0.375, 0.5, 0.5; 
+	0.3125, 0.34375, 0.375, 0.53125, 0.53125; 
+    0.3125, 0.34375, 0.375, 0.5, 0.5; %forcibly included m1 = 1 into the orginal algo
 	]; 
 
 	m1 = (m2+1)./Gr-1; 
@@ -25,22 +25,36 @@ m2 = [
     end
     %file = 'experiment.txt'; 
     %delete(file); 
-    for N2 = (1 : 1 : 1) %only seg 1 for now
-        for M2 = (3 : 1 : 5) %neglect f1 part 
-            xi = m2(N2, M2-1) : 0.00001 : m2(N2, M2); 
-            m2i = [m2(N2, M2-1); m2(N2, M2)]; 
-            gm1i = [gm1(N2, M2-1); gm1(N2, M2)]; 
-            pi = polyfit(m2i, gm1i, 1); 
+    for N2 = (1 : 1) %seg 1
+        disp(N2); 
+        for M2 = (3 : 5) %neglect f1 part 
+            xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
+            m1i = [m1(N2, M2-1); m1(N2, M2)]; 
+            gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
+            pi = polyfit(m1i, gm1i, 1); 
             disp(pi); 
             yi = polyval(pi, xi); 
             plot(xi, yi); 
             hold on; 
         end 
     end 
-    x = 0 : 0.001 : 1; 
-    y = log2(x+1); 
-    plot(x, y); 
-%    for I = (1 : 1 : 1) 
+    for N2 = (2 : 4) %seg 2 to seg 4
+        disp(N2); 
+        for M2 = (3 : 4) %neglect f1 part and repeated f4
+            xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
+            m1i = [m1(N2, M2-1); m1(N2, M2)]; 
+            gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
+            pi = polyfit(m1i, gm1i, 1); 
+            disp(pi); 
+            yi = polyval(pi, xi); 
+            plot(xi, yi); 
+            hold on; 
+        end 
+    end 
+    x = 0.075 : 0.001 : 1; 
+    y = log2(1+x); 
+    %plot(x, y); 
+%    for I = (1 : 1) 
 %        disp(I); 
 %        disp(['m1: ', num2str(m1(I,:))]); 
 %        disp(['m2: ', num2str(m2(I,:))]); 
