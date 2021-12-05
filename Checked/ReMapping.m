@@ -24,17 +24,15 @@ m2 = [
             gm1(N1,M1) = castrARM4(m1(N1,M1)); %#ok<SAGROW>
         end
     end
-    %file = 'experiment.txt'; 
-    %delete(file); 
     for N2 = (1 : 1) %seg 1
         disp(N2); 
         for M2 = (2 : 5) %neglect f1 part 
             xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
             m1i = [m1(N2, M2-1); m1(N2, M2)]; 
             gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
-            pi = polyfit(m1i, gm1i, 1); 
-            disp(pi); 
-            yi = polyval(pi, xi); 
+            pj = polyfit(m1i, gm1i, 1); 
+            disp(pj); 
+            yi = polyval(pj, xi); 
             plot(xi, yi); 
             hold on; 
         end 
@@ -45,9 +43,9 @@ m2 = [
             xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
             m1i = [m1(N2, M2-1); m1(N2, M2)]; 
             gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
-            pi = polyfit(m1i, gm1i, 1); 
-            disp(pi); 
-            yi = polyval(pi, xi); 
+            pj = polyfit(m1i, gm1i, 1); 
+            disp(pj); 
+            yi = polyval(pj, xi); 
             plot(xi, yi); 
             hold on; 
         end 
@@ -55,10 +53,3 @@ m2 = [
     x = 0 : 0.001 : 1; 
     y = log2(1+x); 
     %plot(x, y); 
-%    for I = (1 : 1) 
-%        disp(I); 
-%        disp(['m1: ', num2str(m1(I,:))]); 
-%        disp(['m2: ', num2str(m2(I,:))]); 
-%        disp(['gm1: ', num2str(gm1(I,:))]); 
-%        %fclose('all'); 
-%    end 

@@ -21,8 +21,6 @@ m2 = [
             gm1(N,M) = castrARM4(m1(N,M));  %#ok<AGROW>
         end
     end
-    x_ratio = m1./m2; 
-    y_ratio = m1./gm1; 
     file = 'FindPoints.txt'; 
     delete(file); 
     for I = (1 : 4) 
@@ -37,8 +35,6 @@ m2 = [
         fprintf (fid, 'm1: %s\n', num2str(m1(I,:)) ); 
         fprintf (fid, 'm2: %s\n', num2str(m2(I,:)) ); 
         fprintf (fid, 'gm1: %s\n', num2str(gm1(I,:)) ); 
-        fprintf (fid, 'm1/m2: %s\n', num2str(x_ratio(I,:)) ); 
-        fprintf (fid, 'm1/gm2: %s\n', num2str(y_ratio(I,:)) ); 
         fprintf (fid, '\n'); 
         fclose('all'); 
     end 
