@@ -91,7 +91,7 @@ function CheckAlgo
     Actual = zeros(1, 2^Array);
     Approx = zeros(1, 2^Array);
     
-    FileName = 'CheckAlgo Result.txt';
+    FileName = 'CheckAlgo Result1.txt';
     tic;
     for Multiplier = 0 : 2^Power - 1
         Count = Count + 1;

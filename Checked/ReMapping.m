@@ -1,7 +1,10 @@
-%To add f1 segment to this algo: 
-%1. calculate m7MSB
-%2. 
-%3. calculate the error
+%debug: 1.try simpler way: merely adjust the second fitted points to be
+%that of (m1-o, g(m1-o)) and check the result using this experiment;
+%2.program a whole new set of RMrangeMapping and castrARM so that they
+%can be practically used as functions for finding coeffients. 
+
+%bug fixed using method 1
+
 format long; 
 
 Gr = [
@@ -20,18 +23,19 @@ m2 = [
 
 	m1 = (m2+1)./Gr-1; 
     for N1 = (1 : 4) 
-        for M1 = (1 : 5) 
+        for M1 = (1 : 4) 
             gm1(N1,M1) = castrARM4(m1(N1,M1)); %#ok<SAGROW>
+            fm1(N1,M1) = castrARM4(m1(N1,M1+1)-2^-16); %#ok<SAGROW>
         end
     end
     for N2 = (1 : 1) %seg 1
         disp(N2); 
-        for M2 = (2 : 5) %neglect f1 part 
-            xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
-            m1i = [m1(N2, M2-1); m1(N2, M2)]; 
-            gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
+        for M2 = (1 : 4) 
+            m1i = [m1(N2, M2); m1(N2, M2+1)-2^-16]; 
+            gm1i = [gm1(N2, M2); fm1(N2, M2)]; 
             pj = polyfit(m1i, gm1i, 1); 
             disp(pj); 
+            xi = m1(N2, M2) : 0.00001 : m1(N2, M2+1)-2^-16; 
             yi = polyval(pj, xi); 
             plot(xi, yi); 
             hold on; 
@@ -39,12 +43,12 @@ m2 = [
     end 
     for N2 = (2 : 4) %seg 2 to seg 4
         disp(N2); 
-        for M2 = (2 : 4) %neglect f1 part and repeated f4
-            xi = m1(N2, M2-1) : 0.00001 : m1(N2, M2); 
-            m1i = [m1(N2, M2-1); m1(N2, M2)]; 
-            gm1i = [gm1(N2, M2-1); gm1(N2, M2)-0.00001]; 
+        for M2 = (1 : 3) 
+            m1i = [m1(N2, M2); m1(N2, M2+1)-2^-16]; 
+            gm1i = [gm1(N2, M2); fm1(N2, M2)]; 
             pj = polyfit(m1i, gm1i, 1); 
             disp(pj); 
+            xi = m1(N2, M2) : 0.00001 : m1(N2, M2+1)-2^-16; 
             yi = polyval(pj, xi); 
             plot(xi, yi); 
             hold on; 

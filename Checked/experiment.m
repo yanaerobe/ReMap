@@ -1,10 +1,3 @@
-%BUG:
-%the subtracting g(m1) is not the real gm1(m1), the real one should have a
-%value of g(m1-o)
-
-%alright, it seems to be the only bug. 
-%debug: 1.try simpler way: merely adjust the second fitted points to be
-%that of (m1-o, g(m1-o)) and check the result using this experiment;
 %2.program a whole new set of RMrangeMapping and castrARM so that they
 %can be practically used as functions for finding coeffients. 
 
@@ -24,16 +17,39 @@ m2 = [
     0.3125, 0.34375, 0.375, 0.5, 0.5; %forcibly included m1 = 1 into the orginal algo
 	]; 
 
-	C = 2^-32; 
-    m1 = (m2+1)./Gr-1; 
-    for N = (1 : 99) 
-        xi(N) = m1(2,2) + N*(m1(2,3)-m1(2,2))/100; 
-        yi(N) = castrARM4(xi(N)); 
-        %plot (xi(N), yi(N), 'r.'); 
-        %hold on; 
+	m1 = (m2+1)./Gr-1; 
+    for N1 = (1 : 4) 
+        for M1 = (1 : 4) 
+            gm1(N1,M1) = castrARM4(m1(N1,M1)); %#ok<SAGROW>
+            fm1(N1,M1) = castrARM4(m1(N1,M1+1)-2^-16); %#ok<SAGROW>
+        end
     end
-    pj = polyfit(xi, yi, 1); 
-    xj = (m1(2,2) : 99*(m1(2,3)-m1(2,2))/100);
-    yj = polyval(pj, xj); 
-    plot(xj, yj, 'b'); 
-    disp(pj); 
+    for N2 = (1 : 1) %seg 1
+        disp(N2); 
+        for M2 = (1 : 4) 
+            m1i = [m1(N2, M2); m1(N2, M2+1)-2^-16]; 
+            gm1i = [gm1(N2, M2); fm1(N2, M2)]; 
+            pj = polyfit(m1i, gm1i, 1); 
+            disp(pj); 
+            xi = m1(N2, M2) : 0.00001 : m1(N2, M2+1)-2^-16; 
+            yi = polyval(pj, xi); 
+            plot(xi, yi); 
+            hold on; 
+        end 
+    end 
+    for N2 = (2 : 4) %seg 2 to seg 4
+        disp(N2); 
+        for M2 = (1 : 3) 
+            m1i = [m1(N2, M2); m1(N2, M2+1)-2^-16]; 
+            gm1i = [gm1(N2, M2); fm1(N2, M2)]; 
+            pj = polyfit(m1i, gm1i, 1); 
+            disp(pj); 
+            xi = m1(N2, M2) : 0.00001 : m1(N2, M2+1)-2^-16; 
+            yi = polyval(pj, xi); 
+            plot(xi, yi); 
+            hold on; 
+        end 
+    end 
+    x = 0 : 0.001 : 1; 
+    y = log2(1+x); 
+    %plot(x, y); 

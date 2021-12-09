@@ -1,4 +1,3 @@
-function FindPoints 
 format long; 
 
 Gr = [
@@ -18,7 +17,7 @@ m2 = [
 	m1 = (m2+1)./Gr-1; 
     for N = (1 : 4) 
         for M = (1 : 5) 
-            gm1(N,M) = castrARM4(m1(N,M));  %#ok<AGROW>
+            gm1(N,M) = castrARM4(m1(N,M));  
         end
     end
     file = 'FindPoints.txt'; 
