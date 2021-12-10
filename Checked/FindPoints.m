@@ -37,4 +37,3 @@ m2 = [
         fprintf (fid, '\n'); 
         fclose('all'); 
     end 
-end

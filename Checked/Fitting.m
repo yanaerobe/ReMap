@@ -26,14 +26,14 @@ m2 = [
 
 	C = 2^-32; 
     m1 = (m2+1)./Gr-1; 
-    for N = (1 : 99) 
-        xi(N) = m1(2,2) + N*(m1(2,3)-m1(2,2))/100; 
+    for N = (1 : 999) 
+        xi(N) = m1(1,1) + N*(m1(1,2)-m1(1,1))/1000; 
         yi(N) = castrARM4(xi(N)); 
-        %plot (xi(N), yi(N), 'r.'); 
-        %hold on; 
+        plot (xi(N), yi(N), 'r.'); 
+        hold on; 
     end
     pj = polyfit(xi, yi, 1); 
-    xj = (m1(2,2) : 99*(m1(2,3)-m1(2,2))/100);
+    xj = (m1(1,1) : 0.00001 : 999*(m1(1,2)-m1(1,1))/1000);
     yj = polyval(pj, xj); 
     plot(xj, yj, 'b'); 
     disp(pj); 
