@@ -1,4 +1,4 @@
-function rslt = AlgoReMapping_16bit(num)
+function rslt = CastrARM16(m)
 %ALGOREMAPPING opmitised method for range mapping
 %   After figuring out coefficients by fitting, we apply them to the
 %   remapping method. This function calculates one result each time. 
@@ -11,8 +11,6 @@ format long;
 fid = fopen('FindCoefficients.txt', 'r'); 
 
 coef = fscanf(fid, '%f', [2, 13]); 
-
-[k, m] = KeyValues(num); 
 
 if (0 <= m && m < 0.075) 
     m_r = coef(1, 1)*m + coef(2, 1); 
@@ -42,6 +40,6 @@ elseif(5/6 <= m && m < 1)
     m_r = coef(1, 13)*m + coef(2, 13); 
 end
 
-rslt = m_r + k; 
+rslt = m_r; 
 
 end

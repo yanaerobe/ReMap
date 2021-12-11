@@ -30,10 +30,12 @@ m2 = [
         %disp(['m1/m2: ', num2str(x_ratio(I,:))]); 
         %disp(['fm1/gm2: ', num2str(y_ratio(I,:))]); 
         fid = fopen(file, 'a'); 
-        fprintf (fid, 'Segment %d :\n', I); 
-        fprintf (fid, 'm1: %s\n', num2str(m1(I,:)) ); 
-        fprintf (fid, 'm2: %s\n', num2str(m2(I,:)) ); 
-        fprintf (fid, 'gm1: %s\n', num2str(gm1(I,:)) ); 
+        fprintf (fid, 'Segment %f :\nm1: ', I); 
+        fprintf (fid, '%f ', m1(I,:) ); 
+        fprintf (fid, '\nm2: '); 
+        fprintf (fid, '%f ', m2(I,:) ); 
+        fprintf (fid, '\ngm1: '); 
+        fprintf (fid, '%f ', gm1(I,:) ); 
         fprintf (fid, '\n'); 
         fclose('all'); 
     end 
