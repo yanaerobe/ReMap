@@ -1,7 +1,5 @@
 function rslt = CastrARM16(m)
-%ALGOREMAPPING opmitised method for range mapping
-%   After figuring out coefficients by fitting, we apply them to the
-%   remapping method. This function calculates one result each time. 
+%CastrARM16 forcibly included m1 = 1 into the orginal algo
 
 format long; 
 
@@ -9,7 +7,6 @@ format long;
 %nr_MSBs_const = 16; %for 16-bit algo, we need a 16 bit constant
 
 fid = fopen('FindCoefficients.txt', 'r'); 
-
 coef = fscanf(fid, '%f', [2, 13]); 
 
 if (0 <= m && m < 0.075) 
@@ -36,9 +33,11 @@ elseif(0.75 <= m && m < 19/24)
     m_r = coef(1, 11)*m + coef(2, 11); 
 elseif(19/24 <= m && m < 5/6) 
     m_r = coef(1, 12)*m + coef(2, 12); 
-elseif(5/6 <= m && m < 1) 
+elseif(5/6 <= m && m <= 1) 
     m_r = coef(1, 13)*m + coef(2, 13); 
 end
+
+fclose('all');
 
 rslt = m_r; 
 

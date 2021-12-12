@@ -6,7 +6,7 @@ function result = castrARM4(m1)
 nr_MSBs_m =7;
 nr_MSBs_const = 11;
 
-[m1, m_2MSBs] = RMrangeMapping(m1);                     %Perform Range Mapping
+[m1, m_2MSBs] = ReRangeMapping(m1);                     %Perform Range Mapping
 x = floor(m1 * 2^nr_MSBs_m) / 2^nr_MSBs_m;           %calculate mantissa
 
 % Computing constants (4-region error correction equations)

@@ -2,9 +2,6 @@ function pj_fit = Fitting(rgn, seg)
 
 format long; 
 
-point_num = 1000; %number of points to be fitted
-C = 2^-32; 
-
 Gr = [
     2^0+2^-2, 2^0+2^-2, 2^0+2^-2, 2^0+2^-2, 2^0+2^-2; 
     2^0, 2^0, 2^0, 2^0, 2^0; 
@@ -19,11 +16,12 @@ m2 = [
     0.3125, 0.34375, 0.375, 0.5, 0.5; 
 	]; 
 
+    point_num = 1000; %number of points to be fitted
+
     m1 = (m2+1)./Gr-1; 
-    for N = (1 : point_num-1) 
-        xi(N) = m1(rgn,seg) + N*(m1(rgn,seg+1)-m1(rgn,seg))/point_num; 
-        yi(N) = castrARM4(xi(N)); 
-    end
+    step = (m1(rgn,seg+1)-m1(rgn,seg))/point_num; 
+    xi = (m1(rgn,seg) : step : m1(rgn,seg+1)-step); 
+    yi = arrayfun(@castrARM4, xi); 
     poly = polyfit(xi, yi, 1); 
 
     pj_fit = poly; 
