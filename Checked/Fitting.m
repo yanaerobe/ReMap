@@ -1,4 +1,4 @@
-function pj_fit = Fitting(rgn, seg) 
+function poly = Fitting(rgn, seg) 
 
 format long; 
 
@@ -22,7 +22,7 @@ m2 = [
     step = (m1(rgn,seg+1)-m1(rgn,seg))/point_num; 
     xi = (m1(rgn,seg) : step : m1(rgn,seg+1)-step); 
     yi = arrayfun(@castrARM4, xi); 
+    
     poly = polyfit(xi, yi, 1); 
 
-    pj_fit = poly; 
 end

@@ -13,7 +13,6 @@ m2 = [
 	0.3125, 0.34375, 0.375, 0.53125, 0.53125; 
     0.3125, 0.34375, 0.375, 0.5, 0.5; %forcibly included m1 = 1 into the orginal algo
 	]; 
-
     
 	m1 = (m2+1)./Gr-1; 
     gm1 = reshape(arrayfun(@castrARM4, m1(:)), 4, 5); 
