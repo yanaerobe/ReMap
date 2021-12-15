@@ -22,6 +22,7 @@ function DrawGraph
     hold on;
 
     for Multiplier = 0 : 2^Power - 1
+        disp(Multiplier); 
         x = ((Multiplier * 2^Array) + 1) : ((Multiplier + 1) * 2^Array);
         y = fread(File, 2^Array, 'float32');
         plot(x, y, 'k', 'LineWidth', 1);
@@ -30,7 +31,7 @@ function DrawGraph
     set(gcf, 'Position', [200, 200, 330, 250]);                             %sets the position and size of the figure window[left, bottom, width, height]
     %set(gca, 'OuterPosition', [-0.05, 0, 1.08, 1]);                      %sets the position and size of the graph [left, bottom, width, height]
     set(gca, 'FontSize', LabelFont);                                        %sets the font size of the tick markers
-    set(gca, 'YTickLabel', sprintf('% .2f|', get(gca, 'Ytick')));           %sets the number of decimal places on Y-Axis
+    %set(gca, 'YTickLabel', sprintf('% .2f|', get(gca, 'Ytick')));           %sets the number of decimal places on Y-Axis
     set(gca, 'XScale', 'log', 'XGrid', 'on', 'XColor', Color);              %X-Axis parameters
     set(gca, 'YScale', 'linear', 'YGrid', 'on', 'YColor', Color);           %Y-Axis parameters
     

@@ -3,10 +3,12 @@ function rslt = AlgoReMapping_16bit(num)
 %   After figuring out coefficients by fitting, we apply them to the
 %   remapping method. This function calculates one result each time. 
 
-format float; 
-
-fid = fopen('FindCoefficients.txt', 'r'); 
-coef = fscanf(fid, '%f', [2, 13]); 
+%fid = fopen('FindCoefficients.txt', 'r'); 
+%coef = fscanf(fid, '%f', [2, 13]); 
+coef = [
+    1.405174, 1.25, 1.25,1.25, 1.124139, 1, 1, 0.977539, 0.875, 0.875, 0.837891, 0.75, 0.75; 
+    -0.000447,0.011719,0.013184,0.010254,0.040297,0.083496,0.084961,0.095827,0.150879,0.152832,0.178346,0.248535,0.25
+    ]; 
 
 [k, m] = KeyValues(num); 
 
@@ -38,8 +40,9 @@ elseif (5/6 <= m && m < 1)
     m_r = coef(1, 13)*m + coef(2, 13); 
 end
 
-fclose('all');
+%fclose('all');
 
-rslt = m_r + k; 
+m_16 = floor(m_r * 2^16) / 2^16; 
+rslt = m_16 + k; 
 
 end
