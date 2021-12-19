@@ -35,10 +35,10 @@ function ReCheckAlgo
         end
     end
     File = fopen(FileName, 'a');
-    fprintf(File, 'AlgoReMapping_16bit (%d-bit) : Min Error       = %+.10f, Input     = %10u\r\n', Total, MinError, MinError_Num);         %CHANGE ALGORITHM'S NAME HERE!
-    fprintf(File, '                         : Max Error       = %+.10f, Input     = %10u\r\n', MaxError, MaxError_Num);
-    fprintf(File, '                         : Min Error(%%)    = %+.10f, Input     = %10u\r\n', MinPercent, MinPercent_Num);
-    fprintf(File, '                         : Max Error(%%)    = %+.10f, Input     = %10u\r\n', MaxPercent, MaxPercent_Num);
+    fprintf(File, 'AlgoReMapping_16bit (%d-bit) \nMax Negative Error        = %+.10f, Input     = %10u\r\n', Total, MinError, MinError_Num);         %CHANGE ALGORITHM'S NAME HERE!
+    fprintf(File, 'Max Positive Error          = %+.10f, Input     = %10u\r\n', MaxError, MaxError_Num);
+    fprintf(File, 'Min Negative Error(%%)    = %+.10f, Input     = %10u\r\n', MinPercent, MinPercent_Num);
+    fprintf(File, 'Max Positive Error(%%)      = %+.10f, Input     = %10u\r\n', MaxPercent, MaxPercent_Num);
     fprintf(File, '(%.2f)\r\n', toc);
     fprintf(File, '\r\n');
     fclose('all');
