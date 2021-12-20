@@ -1,13 +1,7 @@
-AlgoReMapping_16bit (16-bit) : Min Error       = -0.0017217504, Input     =      57343
-                         : Max Error       = +0.0012850311, Input     =      40141
-                         : Min Error(%)    = -0.0230611567, Input     =         39
-                         : Max Error(%)    = +0.0457763672, Input     =          2
-(0.40)
-
-AlgoReMapping_16bit (16-bit) 
+AlgoReMapping_nonfit (16-bit) 
 Max Negative Error        = -0.0017255279, Input     =      57343
-Max Positive Error        = +0.0013225929, Input     =      41215
+Max Positive Error          = +0.0015911648, Input     =      41983
 Min Negative Error(%)    = -0.0230611567, Input     =         39
-Max Positive Error(%)    = +0.0243406252, Input     =         23
-(8.93)
+Max Positive Error(%)      = +0.0243406252, Input     =         23
+(11.94)
 
