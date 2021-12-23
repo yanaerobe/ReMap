@@ -3,5 +3,5 @@ Max Negative Error        = -0.0017255279, Input     =      57343
 Max Positive Error          = +0.0015911648, Input     =      41983
 Min Negative Error(%)    = -0.0230611567, Input     =         39
 Max Positive Error(%)      = +0.0243406252, Input     =         23
-(11.94)
+(1.35)
 

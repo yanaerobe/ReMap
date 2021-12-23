@@ -1,4 +1,6 @@
-make; 
+%Find nodes for each piece
+
+makem1; 
 
 gr = 2^-7./Gr; 
 
@@ -15,7 +17,7 @@ end
 rgn2 = m1(2, 1 : 3); 
 i = 1; 
 num = rgn2(1) + gr(2); 
-while num < m1(2,2)
+while num <= m1(2,2) - gr(2)
     rgn2 = [rgn2(1 : i), num, rgn2(i+1:end)]; 
     num = num + gr(2); 
     i = i + 1; 
@@ -25,7 +27,7 @@ end
 rgn3 = m1(3, 1 : 3); 
 i = 1; 
 num = rgn3(1) + gr(3); 
-while num < m1(3,2) - 0.0000000000001
+while num <= m1(3,2) - gr(3)
     rgn3 = [rgn3(1 : i), num, rgn3(i+1:end)]; 
     num = num + gr(3); 
     i = i + 1; 
@@ -35,7 +37,7 @@ end
 rgn4 = m1(4, 1 : 4); 
 i = 1; 
 num = rgn4(1) + gr(4); 
-while num < m1(4,2) - 0.0000000000001
+while num <= m1(4,2) - gr(4)
     rgn4 = [rgn4(1 : i), num, rgn4(i+1:end)]; 
     num = num + gr(4); 
     i = i + 1; 
