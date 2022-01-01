@@ -10,13 +10,7 @@ makeremap; %retrieve coef and node data, slower but easier to read
 
 [k, m] = KeyValues(num); 
 
-if m == 0
-    n = 1; 
-elseif find(node == m) 
-    n = find(m <= node, 1); 
-else
-    n = find(m <= node, 1)-1;
-end
+n = find(m < node, 1)-1;
 
 m_r = coef(1, n)*m + coef(2, n); 
 
