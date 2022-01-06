@@ -7,14 +7,14 @@ module remap_top(
     output wire [`NUM_LENGTH - 1 : 0] rslt_o
 ); 
 
+wire [`M1_LENGTH : 0] keyvalues_m1; 
+
 shifter32 key_values( 
     .num(num_i), 
     
     .k(keyvalues_k), 
     .m1(keyvalues_m1) 
 ); 
-
-wire [`M1_LENGTH : 0] keyvalues_m1; 
 
 remap re_map( 
     .m1(keyvalues_m), 
