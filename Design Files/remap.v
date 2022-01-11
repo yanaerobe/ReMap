@@ -17,8 +17,8 @@ module remap(
     end
 
     // compare 
-    wire piece [`PIECE_NUM - 1 : 0]; 
-    wire const [`M1_LENGTH - 1 : 0] = `M1_LENGTH'b0; 
+    wire [`PIECE_NUM - 1 : 0] piece; 
+    wire [`M1_LENGTH - 1 : 0] const = `M1_LENGTH'b0; 
 
     genvar i; 
     generate 
@@ -33,19 +33,19 @@ module remap(
     wire seg_3; 
     wire seg_4; 
 
-    assign seg_1 = (piece[`SEG1_NUM - 1 : 0] || {`SEG1_NUM{0}}); 
+    assign seg_1 = (piece[`SEG1_NUM - 1 : 0] || 0); 
     assign seg_2 = (piece[`SEG2_NUM + `SEG1_NUM - 1 : `SEG1_NUM] || 0); 
     assign seg_3 = (piece[`SEG3_NUM + `SEG2_NUM + `SEG1_NUM - 1 : `SEG2_NUM + `SEG1_NUM] || 0); 
     assign seg_4 = (piece[`PIECE_NUM - 1 : `PIECE_NUM - `SEG4_NUM] || 0); 
     
     // shift for adder 2
-    wire adder [`M1_LENGTH - 1 : 0]; 
+    wire [`M1_LENGTH - 1 : 0] adder; 
 
     assign adder = 
-        ({`M1_LENGTH{seg_1}} & -(m1 << 2)) | 
+        ({`M1_LENGTH{seg_1}} & (m1 << 2)) | 
         ({`M1_LENGTH{seg_2}} & 0) | 
-        ({`M1_LENGTH{seg_3}} & (m1 >> 2)) | 
-        ({`M1_LENGTH{seg_4}} & (m1 >> 3)); // if wrong, it's subtraction
+        ({`M1_LENGTH{seg_3}} & -(m1 >> 3)) | 
+        ({`M1_LENGTH{seg_4}} & -(m1 >> 2)); // if wrong, it's subtraction
 
     // add adder 2
     wire [`M1_LENGTH - 1 : 0] m2_r; 
