@@ -22,8 +22,8 @@ module remap(
 
     genvar i; 
     generate 
-        for (i = 0; i < 42; i = i + 1) begin 
-            assign piece[i] = (node[i] < m1 && m1 <= node[i+1]); 
+        for (i = 0; i < 41; i = i + 1) begin 
+            assign piece[i] = ((node[i] < m1) && (m1 <= node[i+1])); 
             assign const = const || ({`M1_LENGTH{piece[i]}} & intcpt[i]); 
         end
     endgenerate 

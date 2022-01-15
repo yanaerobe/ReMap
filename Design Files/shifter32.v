@@ -8,44 +8,39 @@ module shifter32(
 ); 
 
     // detect k 
-    always @ (*) begin 
-        casex (num) 
-            32'b0000_0000_0000_0000_0000_0000_0000_0000: k = 5'b00000; 
-            32'b0000_0000_0000_0000_0000_0000_0000_0001: k = 5'b00000; 
-            32'b0000_0000_0000_0000_0000_0000_0000_001x: k = 5'b00001; 
-            32'b0000_0000_0000_0000_0000_0000_0000_01xx: k = 5'b00010; 
-            32'b0000_0000_0000_0000_0000_0000_0000_1xxx: k = 5'b00011; 
-            32'b0000_0000_0000_0000_0000_0000_0001_xxxx: k = 5'b00100; 
-            32'b0000_0000_0000_0000_0000_0000_001x_xxxx: k = 5'b00101; 
-            32'b0000_0000_0000_0000_0000_0000_01xx_xxxx: k = 5'b00110; 
-            32'b0000_0000_0000_0000_0000_0000_1xxx_xxxx: k = 5'b00111; 
-            32'b0000_0000_0000_0000_0000_0001_xxxx_xxxx: k = 5'b01000; 
-            32'b0000_0000_0000_0000_0000_001x_xxxx_xxxx: k = 5'b01001; 
-            32'b0000_0000_0000_0000_0000_01xx_xxxx_xxxx: k = 5'b01010; 
-            32'b0000_0000_0000_0000_0000_1xxx_xxxx_xxxx: k = 5'b01011; 
-            32'b0000_0000_0000_0000_0001_xxxx_xxxx_xxxx: k = 5'b01100; 
-            32'b0000_0000_0000_0000_001x_xxxx_xxxx_xxxx: k = 5'b01101; 
-            32'b0000_0000_0000_0000_01xx_xxxx_xxxx_xxxx: k = 5'b01110; 
-            32'b0000_0000_0000_0000_1xxx_xxxx_xxxx_xxxx: k = 5'b01111; 
-            32'b0000_0000_0000_0001_xxxx_xxxx_xxxx_xxxx: k = 5'b10000; 
-            32'b0000_0000_0000_001x_xxxx_xxxx_xxxx_xxxx: k = 5'b10001; 
-            32'b0000_0000_0000_01xx_xxxx_xxxx_xxxx_xxxx: k = 5'b10010; 
-            32'b0000_0000_0000_1xxx_xxxx_xxxx_xxxx_xxxx: k = 5'b10011; 
-            32'b0000_0000_0001_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b10100; 
-            32'b0000_0000_001x_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b10101; 
-            32'b0000_0000_01xx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b10110; 
-            32'b0000_0000_1xxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b10111; 
-            32'b0000_0001_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11000; 
-            32'b0000_001x_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11001; 
-            32'b0000_01xx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11010; 
-            32'b0000_1xxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11011; 
-            32'b0001_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11100; 
-            32'b001x_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11101; 
-            32'b01xx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11110; 
-            32'b1xxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11111; 
-            default: k = 5'b00000; 
-        endcase
-    end
+    assign k = 
+        num[31] ? 5'd31 : 
+        num[30] ? 5'd30 : 
+        num[29] ? 5'd29 : 
+        num[28] ? 5'd28 : 
+        num[27] ? 5'd27 : 
+        num[26] ? 5'd26 : 
+        num[25] ? 5'd25 : 
+        num[24] ? 5'd24 : 
+        num[23] ? 5'd23 : 
+        num[22] ? 5'd22 : 
+        num[21] ? 5'd21 : 
+        num[20] ? 5'd20 : 
+        num[19] ? 5'd19 : 
+        num[18] ? 5'd18 : 
+        num[17] ? 5'd17 : 
+        num[16] ? 5'd16 : 
+        num[15] ? 5'd15 : 
+        num[14] ? 5'd14 : 
+        num[13] ? 5'd13 : 
+        num[12] ? 5'd12 : 
+        num[11] ? 5'd11 : 
+        num[10] ? 5'd10 : 
+        num[9] ? 5'd9 : 
+        num[8] ? 5'd8 : 
+        num[7] ? 5'd7 : 
+        num[6] ? 5'd6 : 
+        num[5] ? 5'd5 : 
+        num[4] ? 5'd4 : 
+        num[3] ? 5'd3 : 
+        num[2] ? 5'd2 : 
+        num[1] ? 5'd1 : 
+        5'd0; 
 
     // acquire m1, might have bug
     wire [`M1_LENGTH : 0] m0; 
