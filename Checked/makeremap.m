@@ -1,4 +1,5 @@
 %Store coef and node data
+format long; 
 
 coef = [
     ones(1, 15)*1.25,ones(1, 14)*1,ones(1, 6)*0.875,ones(1, 6)*0.75; 
