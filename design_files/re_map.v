@@ -11,7 +11,7 @@ module remap(
     // generate nodes and constants
     wire [`M1_LENGTH - 1 : 0] node [`NODE_NUM - 1 : 0]; 
     wire [`M1_LENGTH - 1 : 0] intcpt [`PIECE_NUM - 1 : 0]; 
-    `include "data.v"
+    `include "re_data.v"
 
     // compare 
     wire [`PIECE_NUM - 1 : 0] piece; 
