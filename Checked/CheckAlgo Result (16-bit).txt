@@ -1,5 +1,0 @@
-RangeMapping             : Min Error       = -0.0028911713, Input     =      29867
-                         : Max Error       = +0.0022166622, Input     =      28087
-                         : Min Error(%)    = -0.0565948883, Input     =         25
-                         : Max Error(%)    = +0.0356808541, Input     =         55
-

@@ -25,7 +25,7 @@ function ReCheckAlgo
         Num = ((Multiplier * 2^Array) + 1) : ((Multiplier + 1) * 2^Array);
         for i = 1 : 2^Array
             Actual(i) = AlgoLogarithm(Num(i));
-            Approx(i) = AlgoReMapping_16bit(Num(i));           %CHANGE ALGORITHM'S FUNCTION HERE!
+            Approx(i) = AlgoReMapping_nonfit(Num(i));           %CHANGE ALGORITHM'S FUNCTION HERE!
         end
         if Count == 256
             Count = 0;
@@ -35,7 +35,7 @@ function ReCheckAlgo
         end
     end
     File = fopen(FileName, 'a');
-    fprintf(File, 'AlgoReMapping_16bit (%d-bit) \nMax Negative Error        = %+.10f, Input     = %10u\r\n', Total, MinError, MinError_Num);         %CHANGE ALGORITHM'S NAME HERE!
+    fprintf(File, 'AlgoReMapping_nonfit (%d-bit) \nMax Negative Error        = %+.10f, Input     = %10u\r\n', Total, MinError, MinError_Num);         %CHANGE ALGORITHM'S NAME HERE!
     fprintf(File, 'Max Positive Error          = %+.10f, Input     = %10u\r\n', MaxError, MaxError_Num);
     fprintf(File, 'Min Negative Error(%%)    = %+.10f, Input     = %10u\r\n', MinPercent, MinPercent_Num);
     fprintf(File, 'Max Positive Error(%%)      = %+.10f, Input     = %10u\r\n', MaxPercent, MaxPercent_Num);
