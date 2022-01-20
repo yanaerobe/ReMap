@@ -23,7 +23,9 @@ function poly = Fitting(rgn, seg)
 
     poly = polyfit(xi, yi, 1); 
     
-    plot(xi, yi); 
+    yj = polyval(poly, xi); 
+    
+    plot(xi, yj); 
     hold on; 
 
 end

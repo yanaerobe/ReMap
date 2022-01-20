@@ -1,5 +1,12 @@
 *.bin
-*.asv
-docs/*
+*.asv 
+*.mpf 
+*.mti 
+*.bak
+
+docs/* 
+
 Checked/unused/*
-Checked/experiment.m
+Checked/experiment.m 
+
+Design Files/work/* 
