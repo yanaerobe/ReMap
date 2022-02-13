@@ -4,9 +4,8 @@
 *.mti 
 *.bak
 
+modelsim/*
 docs/* 
 
 Checked/unused/*
 Checked/experiment.m 
-
-Design Files/work/* 
