@@ -4,6 +4,7 @@
 *.mti 
 *.bak
 
+modelsim/*
 docs/* 
 
 Checked/unused/*

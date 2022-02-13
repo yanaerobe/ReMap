@@ -2,7 +2,7 @@
 
 `include "defines.v"
 
-module remap( 
+module re_map( 
     input wire [`M1_LENGTH - 1 : 0] m1, 
 
     output wire [`M2_LENGTH - 1 : 0] m2
@@ -65,8 +65,7 @@ module remap(
         ({`M1_LENGTH{piece[37]}} & intcpt[37]) | 
         ({`M1_LENGTH{piece[38]}} & intcpt[38]) | 
         ({`M1_LENGTH{piece[39]}} & intcpt[39]) | 
-        ({`M1_LENGTH{piece[40]}} & intcpt[40]) | 
-        ({`M1_LENGTH{piece[41]}} & intcpt[41]); 
+        ({`M1_LENGTH{piece[40]}} & intcpt[40]); 
 
     wire seg_1; 
     wire seg_2; 

@@ -1,6 +1,6 @@
 `include "defines.v" 
 
-module shifter32( 
+module re_shifter32( 
     input wire [`NUM_LENGTH - 1 : 0] num, 
 
     output wire [`K_LENGTH - 1 : 0] k, 
@@ -9,38 +9,38 @@ module shifter32(
 
     // detect k 
     assign k = 
-        num[31] ? 5'd31 : 
-        num[30] ? 5'd30 : 
-        num[29] ? 5'd29 : 
-        num[28] ? 5'd28 : 
-        num[27] ? 5'd27 : 
-        num[26] ? 5'd26 : 
-        num[25] ? 5'd25 : 
-        num[24] ? 5'd24 : 
-        num[23] ? 5'd23 : 
-        num[22] ? 5'd22 : 
-        num[21] ? 5'd21 : 
-        num[20] ? 5'd20 : 
-        num[19] ? 5'd19 : 
-        num[18] ? 5'd18 : 
-        num[17] ? 5'd17 : 
-        num[16] ? 5'd16 : 
-        num[15] ? 5'd15 : 
-        num[14] ? 5'd14 : 
-        num[13] ? 5'd13 : 
-        num[12] ? 5'd12 : 
-        num[11] ? 5'd11 : 
-        num[10] ? 5'd10 : 
-        num[9] ? 5'd9 : 
-        num[8] ? 5'd8 : 
-        num[7] ? 5'd7 : 
-        num[6] ? 5'd6 : 
-        num[5] ? 5'd5 : 
-        num[4] ? 5'd4 : 
-        num[3] ? 5'd3 : 
-        num[2] ? 5'd2 : 
-        num[1] ? 5'd1 : 
-        5'd0; 
+        ({`K_LENGTH{num[31]}} & `K_LENGTH'd31) | 
+        ({`K_LENGTH{num[30]}} & `K_LENGTH'd30) | 
+        ({`K_LENGTH{num[29]}} & `K_LENGTH'd29) | 
+        ({`K_LENGTH{num[28]}} & `K_LENGTH'd28) | 
+        ({`K_LENGTH{num[27]}} & `K_LENGTH'd27) | 
+        ({`K_LENGTH{num[26]}} & `K_LENGTH'd26) | 
+        ({`K_LENGTH{num[25]}} & `K_LENGTH'd25) | 
+        ({`K_LENGTH{num[24]}} & `K_LENGTH'd24) | 
+        ({`K_LENGTH{num[23]}} & `K_LENGTH'd23) | 
+        ({`K_LENGTH{num[22]}} & `K_LENGTH'd22) | 
+        ({`K_LENGTH{num[21]}} & `K_LENGTH'd21) | 
+        ({`K_LENGTH{num[20]}} & `K_LENGTH'd20) | 
+        ({`K_LENGTH{num[19]}} & `K_LENGTH'd19) | 
+        ({`K_LENGTH{num[18]}} & `K_LENGTH'd18) | 
+        ({`K_LENGTH{num[17]}} & `K_LENGTH'd17) | 
+        ({`K_LENGTH{num[16]}} & `K_LENGTH'd16) | 
+        ({`K_LENGTH{num[15]}} & `K_LENGTH'd15) | 
+        ({`K_LENGTH{num[14]}} & `K_LENGTH'd14) | 
+        ({`K_LENGTH{num[13]}} & `K_LENGTH'd13) | 
+        ({`K_LENGTH{num[12]}} & `K_LENGTH'd12) | 
+        ({`K_LENGTH{num[11]}} & `K_LENGTH'd11) | 
+        ({`K_LENGTH{num[10]}} & `K_LENGTH'd10) | 
+        ({`K_LENGTH{num[9]}} & `K_LENGTH'd9) | 
+        ({`K_LENGTH{num[8]}} & `K_LENGTH'd8) | 
+        ({`K_LENGTH{num[7]}} & `K_LENGTH'd7) | 
+        ({`K_LENGTH{num[6]}} & `K_LENGTH'd6) | 
+        ({`K_LENGTH{num[5]}} & `K_LENGTH'd5) | 
+        ({`K_LENGTH{num[4]}} & `K_LENGTH'd4) | 
+        ({`K_LENGTH{num[3]}} & `K_LENGTH'd3) | 
+        ({`K_LENGTH{num[2]}} & `K_LENGTH'd2) | 
+        ({`K_LENGTH{num[1]}} & `K_LENGTH'd1) | 
+        ({`K_LENGTH{num[0]}} & `K_LENGTH'd0); 
 
     // acquire m1, might have bug
     wire [`M1_LENGTH : 0] m0; 
