@@ -12,7 +12,7 @@ function QueryBin
         Result1 = AlgoLogarithm(Num);                                       %calculate Actual logarithm answer
         Result2 = AlgoMitchell(Num);                                        %calculate Mitchell approximation
         Result3 = AlgoRangeMapping4(Num);                                   %calculate Range Mapping (4 region) approximation
-        Result4 = AlgoReMapping_16bit(Num);                                 %calculate ReMapping approximation
+        Result4 = AlgoReMapping_fit(Num);                                 %calculate ReMapping approximation
         
         Error2 = Result1 - Result2;                                         %calculate approximation error of Mitchell
         Error3 = Result1 - Result3;                                         %calculate approximation error of Range Mapping (4 region)

@@ -1,4 +1,4 @@
-function rslt = AlgoReMapping_16bit(num)
+function rslt = AlgoReMapping_fit(num)
 %ALGOREMAPPING opmitized method for range mapping
 %   After figuring out coefficients by fitting, we apply them to the
 %   remapping method. This function calculates one result each time. 
