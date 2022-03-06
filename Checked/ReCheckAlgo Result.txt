@@ -4,3 +4,17 @@ Max Positive Error          = +0.0015911648, Input     =      41983
 Min Negative Error(%)    = -0.0230611567, Input     =         39
 Max Positive Error(%)      = +0.0243406252, Input     =         23
 (1.30)
+AlgoReMapping_fit (16-bit) 
+Max Negative Error        = -0.0054643900, Input     =      40959
+Max Positive Error          = +0.0031163116, Input     =      36799
+Min Negative Error(%)    = -0.1626945334, Input     =          3
+Max Positive Error(%)      = +0.0982363782, Input     =          9
+(1.41)
+
+AlgoReMapping_fit (16-bit) 
+Max Negative Error        = -0.0017255279, Input     =      57343
+Max Positive Error          = +0.0013225929, Input     =      41215
+Min Negative Error(%)    = -0.0230611567, Input     =         39
+Max Positive Error(%)      = +0.0243406252, Input     =         23
+(1.36)
+

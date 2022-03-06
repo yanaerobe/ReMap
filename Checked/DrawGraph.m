@@ -9,6 +9,7 @@ function DrawGraph
     Grey = 0.3;
     Color = [Grey, Grey, Grey];
     
+    
     FileName = uigetfile({'*.bin', 'Binary File (*.bin)'}, 'Open');
     if FileName == 0
         fprintf('\n\n');

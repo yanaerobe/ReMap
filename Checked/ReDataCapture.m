@@ -44,13 +44,13 @@ function ReDataCapture
                 case {2}
                     Result(i) = AlgoLogarithm(Num(i)) - AlgoRangeMapping4(Num(i));
                 case {3} 
-                    Result(i) = AlgoLogarithm(Num(i)) - AlgoReMapping_nonfit(Num(i)); 
+                    Result(i) = AlgoLogarithm(Num(i)) - AlgoReMapping_fit(Num(i)); 
                 case {11}
                     Result(i) = (AlgoLogarithm(Num(i)) - AlgoMitchell(Num(i))) / Logarithm(Num(i)) * 100;
                 case {12}
                     Result(i) = (AlgoLogarithm(Num(i)) - AlgoRangeMapping4(Num(i))) / AlgoLogarithm(Num(i)) * 100;
                 case {13} 
-                    Result(i) = (AlgoLogarithm(Num(i)) - AlgoReMapping_nonfit(Num(i))) / AlgoLogarithm(Num(i)) * 100; 
+                    Result(i) = (AlgoLogarithm(Num(i)) - AlgoReMapping_fit(Num(i))) / AlgoLogarithm(Num(i)) * 100; 
             end
         end
         fwrite(File, Result, 'float32');                                        %write result into binary file with float32 format
