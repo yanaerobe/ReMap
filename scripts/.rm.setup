@@ -1,0 +1,32 @@
+set source_path "./rtl" 
+set script_path "./scripts" 
+set work_path "./work" 
+set log_path "./logs" 
+set ddc_path "./ddc" 
+set netlist_path "./netlist" 
+
+# check if these exist somewhere in the PDK
+setenv STM90 /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS
+setenv STM40 /net/vlsiserver/usr1/library/STM/cmos040lp_23/CMOS040_SC_9HD_PR_SNPS-AVT-CDS@1.1.UD7445/libs/
+
+set search_path "./rtl ./scripts ./work ./ddc $STM90/bc_1.26V_m40C_wc_1.08V_125C/"
+# seems like full libraries needed, like: 
+# "c35_CORELIB_WC.db c35_IOLIB_WC.db c35_IOLIBV5_WC.db"
+## maybe use worst case? 
+set target_library "$STM90/bc_1.26V_m40C_wc_1.08V_125C/PHS/CORE90GPSVT_Nom.db"
+# set synthetic_library $STM90/???
+# set synbol_library $STM90/common/???
+set link_library "* $target_library $synthetic_library" 
+
+define_design_lib WORK -path "./work" 
+
+# might delete some 
+set auto_wire_load_selection "true" 
+set compile_log_format "%area %cpu %drc %elap_time %endpoint %max_delay %mem %min_delay %group_path %time %tns \
+                        %trials %wns %dynamic_power %leakage_power"
+set default_name_rules "verilog"
+# set hdlin_enable_vpp "true"   ;# Enables Verilog Preprocessing
+# set hdlin_check_no_latch "true"
+# set hdlin_report_inferred_modules "verbose"
+# set verilogout_higher_designs_first "true"
+# set hdlin_optimize_case_default "true"
