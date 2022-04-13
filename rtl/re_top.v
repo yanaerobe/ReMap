@@ -11,10 +11,16 @@ wire [`M1_LENGTH - 1 : 0] keyvalues_m1;
 wire [`K_LENGTH - 1 : 0] keyvalues_k; 
 wire [`M2_LENGTH - 1 : 0] remap_m2; 
 
-shifter32 key_values( 
+lod32 key( 
     .num(num_i), 
     
+    .k(keyvalues_k)
+); 
+
+shifter32 values( 
+    .num(num_i), 
     .k(keyvalues_k), 
+
     .m1(keyvalues_m1) 
 ); 
 
