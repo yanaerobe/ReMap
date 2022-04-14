@@ -30,7 +30,7 @@ begin
 	2'b01: in2_adder <= {34'b0};
 	2'b10: in2_adder <= {2'b11, -{1'b1,M}};
 	2'b11: in2_adder <= {1'b1, -{1'b1,M}, 1'b0};
-	default: in2_adder = 34'b0;
+	default: in2_adder <= 34'b0;
 	endcase
 end
 

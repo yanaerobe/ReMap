@@ -1,17 +1,17 @@
 # For range mapping synthesis
 # read files
-read_verilog ./design_files/rm_lod32_rom.v
-read_verilog ./design_files/rm_logshifter32.v
-read_verilog ./design_files/rm_mapping.v
-read_verilog ./design_files/rm_errorcorrection.v
-read_verilog ./design_files/rm_top.v 
+read_verilog ./rtl/rm_lod32_rom.v
+read_verilog ./rtl/rm_logshifter32.v
+read_verilog ./rtl/rm_mapping.v
+read_verilog ./rtl/rm_errorcorrection.v
+read_verilog ./rtl/rm_top.v 
 
 # constraints 
 current_design m_rangemapping 
 source "${script_path}/rm_constr.con" 
 
 # design environment 
-set_load $MAX_OUTPUT_LOAD [all_outputs] 
+# set_load $MAX_OUTPUT_LOAD [all_outputs] 
 set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
 
 # design constraints 
