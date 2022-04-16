@@ -8,11 +8,11 @@ read_verilog ./rtl/rm_top.v
 
 # constraints 
 current_design m_rangemapping 
-source "${script_path}/rm_constr.con" 
+source "${script_path}/constr.con" 
 
 # design environment 
-# set_load $MAX_OUTPUT_LOAD [all_outputs] 
-# set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
+#set_load $MAX_OUTPUT_LOAD [all_outputs] 
+#set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
 
 # design constraints 
 set_input_delay  $INPUT_DELAY -clock $CLK_PORT [all_inputs]
@@ -26,8 +26,8 @@ if {[sizeof_collection $designware_cells] > 0} {
 }
 
 set_fix_hold [all_clocks]
-compile_ultra
-write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
-write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
-write_sdf ${netlist_path}/syn_$current_design.sdf
+#compile_ultra
+#write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
+#write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
+#write_sdf ${netlist_path}/syn_$current_design.sdf
 # source "${script_path}/report.tcl"

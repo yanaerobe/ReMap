@@ -4,14 +4,15 @@
 *.mti 
 *.bak
 
-modelsim/*
-docs/* 
-
-Checked/unused/*
 Checked/experiment.m
 
-.nfs0000000000020eb300000006
+modelsim/
+docs/
+Checked/unused/
 alib-52/
 ddc/
+
 default.svf
 filenames.log
+command.log
+syslogtemp

@@ -9,7 +9,7 @@ read_verilog ./rtl/re_top.v
 
 # constraints 
 current_design remap_top
-source "${script_path}/rm_constr.con" 
+source "${script_path}/constr.con" 
 
 # design environment 
 # set_load $MAX_OUTPUT_LOAD [all_outputs] 

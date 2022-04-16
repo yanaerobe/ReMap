@@ -9,13 +9,14 @@ set netlist_path "./netlist"
 # setenv STM90 /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS
 # setenv STM40 /net/vlsiserver/usr1/library/STM/cmos040lp_23/CMOS040_SC_9HD_PR_SNPS-AVT-CDS@1.1.UD7445/libs/
 
-set search_path "./rtl ./scripts ./work ./ddc setenv STM90 /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.26V_m40C_wc_1.08V_125C/"
-# seems like full libraries needed, like: 
-# "c35_CORELIB_WC.db c35_IOLIB_WC.db c35_IOLIBV5_WC.db"
-## maybe use worst case? 
-set target_library "/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.26V_m40C_wc_1.08V_125C/PHS/CORE90GPSVT_Worst.db"
+set search_path "./rtl ./scripts ./work ./ddc /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/ /net/vlsiapp/usr6/library/STM/cmos090/IO90GPHVT_BASIC_50A_7M2T_SNPS-AVT_3.0/SNPS/bc_1.10V_m40C_wc_0.90V_125C/ /net/vlsiapp/usr6/library/STM/cmos090/PR90M7_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/ /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/"
+
+set target_library "/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORE90GPSVT_Worst.db /net/vlsiapp/usr6/library/STM/cmos090/IO90GPHVT_BASIC_50A_7M2T_SNPS-AVT_3.0/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/IO90GPHVT_BASIC_50A_7M2T_Worst.db /net/vlsiapp/usr6/library/STM/cmos090/PR90M7_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/PR90M7_Worst.db /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORX90GPSVT_Worst.db"
+
 # set synthetic_library "/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/common/CORE90GPSVT.slib"
-set symbol_library "/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/common/SYMBOL/CORE90GPSVT.sdb"
+
+set symbol_library "/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/common/SYMBOL/CORE90GPSVT.sdb /net/vlsiapp/usr6/library/STM/cmos090/IO90GPHVT_BASIC_50A_7M2T_SNPS-AVT_3.0/SNPS/common/SYMBOL/IO90GPHVT_BASIC_50A_7M2T.sdb /net/vlsiapp/usr6/library/STM/cmos090/PR90M7_SNPS-AVT_2.1/SNPS/common/SYMBOL/PR90M7.sdb /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/common/SYMBOL/CORX90GPSVT.sdb"
+
 set link_library "* $target_library $synthetic_library" 
 
 define_design_lib WORK -path "./work" 

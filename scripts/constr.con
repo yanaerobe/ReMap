@@ -2,11 +2,11 @@
 reset_design 
 
 # clock 
-set CLK_PERIOD 20 
-set FIX_DELAY 10 
+set CLK_PERIOD 5 
+# set FIX_DELAY 10 
 set CLK_SKEW [expr ($CLK_PERIOD*0.05)] 
-set INPUT_DELAY [expr ($CLK_PERIOD*0.15)] 
-set OUTPUT_DELAY [expr ($CLK_PERIOD*0.15)] 
+set INPUT_DELAY [expr ($CLK_PERIOD*0.1)] 
+set OUTPUT_DELAY [expr ($CLK_PERIOD*0.1)] 
 
 ## real clock 
 # omitted, there's definitely no real clock 
@@ -23,14 +23,14 @@ set_clock_uncertainty -hold $CLK_SKEW $CLK_PORT
 
 # design environment 
 ## wtf is this? just change components and ports behind the hastag according to the design and PDK
-#set DRIVE_CELL ? #INV4 
-#set DRIVE_PIN {?} #Q 
-#set OUTPUT_LOAD [load_of ?] #c35_CORELIB_WC/INV4/A 
-#set MAX_OUTPUT_LOAD [expr (?)] #OUTPUT_LOAD*4
-#set WIRELOAD_MODEL ? #10k
+set DRIVE_CELL IVSVTX4
+set DRIVE_PIN {Z}
+set OUTPUT_LOAD [load_of CORE90GPSVT/IVSVTX4/A] 
+set MAX_OUTPUT_LOAD [expr ($OUTPUT_LOAD*4)]
+#set WIRELOAD_MODEL 10k
 
-#set_load $MAX_OUTPUT_LOAD [all_outputs] 
-#set_drive ? [all_inputs] #1.5
+set_load $MAX_OUTPUT_LOAD [all_outputs] 
+set_drive 1.5 [all_inputs]
 
+set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
 #set_wire_load_model -name $WIRELOAD_MODEL 
-#set_driving_cell -lib_cell $DRIVE_CELL -pin $DRIVE_PIN [all_inputs] 
