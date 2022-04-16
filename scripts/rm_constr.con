@@ -13,11 +13,11 @@ set OUTPUT_DELAY [expr ($CLK_PERIOD*0.15)]
 
 ## virtual clock 
 set CLK_PORT VCLK 
-create_clock -period $CLK_PERIOD VCLK 
+create_clock -name VCLK -period $CLK_PERIOD
 
 # default timing constraints 
-set_input_delay $INPUT_DELAY -max -clock $CLK_PORT [remove_from_collection [all_inputs] $CLK_PORT] 
-set_output_delay #OUTPUT_DELAY -max -clock $CLK_PORT [all_outputs] 
+# set_input_delay $INPUT_DELAY -clock $CLK_PORT [all_inputs] 
+# set_output_delay $OUTPUT_DELAY -clock $CLK_PORT [all_outputs] 
 set_clock_uncertainty -setup $CLK_SKEW $CLK_PORT 
 set_clock_uncertainty -hold $CLK_SKEW $CLK_PORT 
 

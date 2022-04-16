@@ -1,13 +1,14 @@
 # For range mapping synthesis
 # read files
-read_verilog ./rtl/rm_lod32_rom.v
-read_verilog ./rtl/rm_logshifter32.v
-read_verilog ./rtl/rm_mapping.v
-read_verilog ./rtl/rm_errorcorrection.v
-read_verilog ./rtl/rm_top.v 
+read_verilog ./rtl/defines.v
+read_verilog ./rtl/re_data.v
+read_verilog ./rtl/re_lod32.v
+read_verilog ./rtl/re_shifter32.v
+read_verilog ./rtl/re_map.v
+read_verilog ./rtl/re_top.v 
 
 # constraints 
-current_design m_rangemapping 
+current_design remap_top
 source "${script_path}/rm_constr.con" 
 
 # design environment 
@@ -26,8 +27,8 @@ if {[sizeof_collection $designware_cells] > 0} {
 }
 
 set_fix_hold [all_clocks]
-compile_ultra
-write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
-write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
-write_sdf ${netlist_path}/syn_$current_design.sdf
+# compile_ultra
+# write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
+# write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
+# write_sdf ${netlist_path}/syn_$current_design.sdf
 # source "${script_path}/report.tcl"

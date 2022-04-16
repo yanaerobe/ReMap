@@ -8,4 +8,10 @@ modelsim/*
 docs/* 
 
 Checked/unused/*
-Checked/experiment.m 
+Checked/experiment.m
+
+.nfs0000000000020eb300000006
+alib-52/
+ddc/
+default.svf
+filenames.log
