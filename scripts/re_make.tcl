@@ -7,6 +7,8 @@ read_verilog ./rtl/re_shifter32.v
 read_verilog ./rtl/re_map.v
 read_verilog ./rtl/re_top.v 
 
+set rpt_file "re_report.rpt"
+
 # constraints 
 current_design remap_top
 source "${script_path}/constr.con" 
@@ -27,8 +29,8 @@ if {[sizeof_collection $designware_cells] > 0} {
 }
 
 set_fix_hold [all_clocks]
-# compile_ultra
-# write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
-# write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
-# write_sdf ${netlist_path}/syn_$current_design.sdf
-# source "${script_path}/report.tcl"
+compile_ultra
+write -format verilog -output ${netlist_path}/syn_$current_design.v -hier
+write -format ddc -hierarchy -output "${ddc_path}/${current_design}.ddc"
+write_sdf ${netlist_path}/syn_$current_design.sdf
+source "${script_path}/rpt.tcl"

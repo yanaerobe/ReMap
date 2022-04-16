@@ -11,6 +11,7 @@ docs/
 Checked/unused/
 alib-52/
 ddc/
+logs/
 
 default.svf
 filenames.log
