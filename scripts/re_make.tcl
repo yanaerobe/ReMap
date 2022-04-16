@@ -1,7 +1,7 @@
 # For range mapping synthesis
 # read files
 read_verilog ./rtl/defines.v
-read_verilog ./rtl/re_data.v
+# read_verilog ./rtl/re_data.v
 read_verilog ./rtl/re_lod32.v
 read_verilog ./rtl/re_shifter32.v
 read_verilog ./rtl/re_map.v
