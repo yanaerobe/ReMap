@@ -123,3 +123,4 @@ assign intcpt[39] = 28'h1FD0005;
 assign node[40] = 28'h6AAAAAA; 
 assign intcpt[40] = 28'h2000000; 
 
+assign node[41] = 28'h8000000; 

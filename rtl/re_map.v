@@ -137,6 +137,8 @@ module remap(
     assign node[40] = 28'h6AAAAAA; 
     assign intcpt[40] = 28'h2000000; 
 
+    assign node[41] = 28'h8000000; 
+
     // compare 
     wire [`PIECE_NUM - 1 : 0] piece; 
     wire [`M1_LENGTH - 1 : 0] const; 
@@ -189,8 +191,7 @@ module remap(
         ({`M1_LENGTH{piece[37]}} & intcpt[37]) | 
         ({`M1_LENGTH{piece[38]}} & intcpt[38]) | 
         ({`M1_LENGTH{piece[39]}} & intcpt[39]) | 
-        ({`M1_LENGTH{piece[40]}} & intcpt[40]) | 
-        ({`M1_LENGTH{piece[41]}} & intcpt[41]); 
+        ({`M1_LENGTH{piece[40]}} & intcpt[40]); 
 
     wire seg_1; 
     wire seg_2; 

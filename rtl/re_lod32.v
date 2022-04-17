@@ -42,7 +42,6 @@ module lod32(
         32'b001x_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11101;
         32'b01xx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11110;
         32'b1xxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx_xxxx: k = 5'b11111;
-        default: k = 5'b00000;
 
         endcase
 
