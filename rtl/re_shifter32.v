@@ -2,8 +2,8 @@
 
 module shifter32( 
     input wire [`NUM_LENGTH - 1 : 0] num, 
+    input wire [`K_LENGTH - 1 : 0] k, 
 
-    output wire [`K_LENGTH - 1 : 0] k, 
     output wire [`M1_LENGTH - 1 : 0] m1
 ); 
 

@@ -145,7 +145,7 @@ module remap(
 
     genvar i; 
     generate 
-        for (i = 0; i < 41; i = i + 1) begin 
+        for (i = 0; i < 41; i = i + 1) begin: find_piece
             assign piece[i] = ((node[i] < m1) && (m1 <= node[i+1])); 
         end
     endgenerate 

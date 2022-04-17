@@ -1,0 +1,646 @@
+ 
+****************************************
+check_design summary:
+Version:     J-2014.09-SP2
+Date:        Sun Apr 17 19:25:07 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unconnected ports (LINT-28)                                     1
+--------------------------------------------------------------------------------
+
+Warning: In design 'remap_top', port 'num_i[0]' is not connected to any nets. (LINT-28)
+1
+ 
+****************************************
+Report : area
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+Library(s) Used:
+
+    CORE90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORE90GPSVT_Worst.db)
+    CORX90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORX90GPSVT_Worst.db)
+
+Number of ports:                           64
+Number of nets:                           305
+Number of cells:                          248
+Number of combinational cells:            247
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         56
+Number of references:                      71
+
+Combinational area:               6170.707127
+Buf/Inv area:                      604.777591
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  6170.707127
+Total area:                 undefined
+1
+ 
+****************************************
+Report : design
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    CORE90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORE90GPSVT_Worst.db)
+    CORX90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORX90GPSVT_Worst.db)
+
+Local Link Library:
+
+    {/net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS//bc_1.10V_m40C_wc_0.90V_125C/PHS/CORE90GPSVT_Worst.db, /net/vlsiapp/usr6/library/STM/cmos090/PR90M7_SNPS-AVT_2.1/SNPS//bc_1.10V_m40C_wc_0.90V_125C/PHS/PR90M7_Worst.db, /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS//bc_1.10V_m40C_wc_0.90V_125C/PHS/CORX90GPSVT_Worst.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : Worst
+    Library : CORE90GPSVT
+    Process :   1.20
+    Temperature : 125.00
+    Voltage :   0.90
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected automatically from the total cell area.
+
+Name           :   area_6Kto12K
+Location       :   CORE90GPSVT
+Resistance     :   1.94119
+Capacitance    :   1
+Area           :   0
+Slope          :   0.002043
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.00
+     2     0.00
+     3     0.01
+     4     0.01
+     5     0.01
+     6     0.01
+     7     0.01
+     8     0.02
+     9     0.02
+    10     0.02
+    11     0.02
+    12     0.02
+    13     0.03
+    14     0.03
+    15     0.03
+
+
+
+Wire Loading Model Mode: enclosed.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+
+    Design: remap_top
+
+    max_area            5000.00
+  - Current Area        6170.71
+  ------------------------------
+    Slack              -1170.71  (VIOLATED)
+
+
+    Design: remap_top
+
+    max_leakage_power          0.00
+  - Current Leakage Power  880074048.00
+  ----------------------------------
+    Slack                  -880074048.00  (VIOLATED)
+
+
+1
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+Operating Conditions: Worst   Library: CORE90GPSVT
+Wire Load Model Mode: enclosed
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+rslt_o[26] (out)                    4.25 f            4.25         0.00
+rslt_o[16] (out)                    4.24 f            4.25         0.01
+rslt_o[20] (out)                    4.23 r            4.25         0.02
+rslt_o[19] (out)                    4.23 r            4.25         0.02
+rslt_o[18] (out)                    4.23 r            4.25         0.02
+rslt_o[25] (out)                    4.23 f            4.25         0.02
+rslt_o[15] (out)                    4.23 r            4.25         0.02
+rslt_o[24] (out)                    4.22 r            4.25         0.03
+rslt_o[8] (out)                     4.22 r            4.25         0.03
+rslt_o[14] (out)                    4.22 r            4.25         0.03
+rslt_o[6] (out)                     4.22 r            4.25         0.03
+rslt_o[12] (out)                    4.21 r            4.25         0.04
+rslt_o[10] (out)                    4.21 r            4.25         0.04
+rslt_o[7] (out)                     4.19 r            4.25         0.06
+rslt_o[21] (out)                    4.19 r            4.25         0.06
+rslt_o[23] (out)                    4.19 f            4.25         0.06
+rslt_o[11] (out)                    4.19 r            4.25         0.06
+rslt_o[17] (out)                    4.19 r            4.25         0.06
+rslt_o[9] (out)                     4.18 r            4.25         0.07
+rslt_o[4] (out)                     4.16 r            4.25         0.09
+rslt_o[13] (out)                    4.16 r            4.25         0.09
+rslt_o[3] (out)                     4.14 r            4.25         0.11
+rslt_o[22] (out)                    4.11 r            4.25         0.14
+rslt_o[5] (out)                     4.06 r            4.25         0.19
+rslt_o[2] (out)                     4.05 r            4.25         0.20
+rslt_o[1] (out)                     3.83 r            4.25         0.42
+rslt_o[0] (out)                     3.75 r            4.25         0.50
+rslt_o[27] (out)                    1.29 r            4.25         2.96
+rslt_o[28] (out)                    1.24 r            4.25         3.01
+rslt_o[29] (out)                    1.15 r            4.25         3.10
+rslt_o[30] (out)                    1.00 r            4.25         3.25
+rslt_o[31] (out)                    0.80 f            4.25         3.45
+
+1
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+
+Library(s) Used:
+
+    CORE90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORE90GPSVT_SNPS-AVT_2.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORE90GPSVT_Worst.db)
+    CORX90GPSVT (File: /net/vlsiapp/usr6/library/STM/cmos090/CORX90GPSVT_SNPS-AVT_4.1/SNPS/bc_1.10V_m40C_wc_0.90V_125C/PHS/CORX90GPSVT_Worst.db)
+
+
+Operating Conditions: Worst   Library: CORE90GPSVT
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+remap_top              area_6Kto12K      CORE90GPSVT
+remap                  area_4Kto5K       CORE90GPSVT
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 107.5268 uW   (42%)
+  Net Switching Power  = 149.7614 uW   (58%)
+                         ---------
+Total Dynamic Power    = 257.2882 uW  (100%)
+
+Cell Leakage Power     = 759.4909 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.1075            0.1498        7.5949e+08            1.0168  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total              0.1075 mW         0.1498 mW     7.5949e+08 pW         1.0168 mW
+1
+ 
+****************************************
+Report : qor
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+
+  Timing Path Group 'VCLK'
+  -----------------------------------
+  Levels of Logic:              42.00
+  Critical Path Length:          3.75
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          1
+  Hierarchical Port Count:         55
+  Leaf Cell Count:               1035
+  Buf/Inv Cell Count:             218
+  Buf Cell Count:                   1
+  Inv Cell Count:                 217
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      1035
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     6170.707127
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:            604.777591
+  Total Buffer Area:             7.68
+  Total Inverter Area:         597.09
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:              6170.707127
+  Design Area:            6170.707127
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1092
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: icd2linux42
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    5.26
+  Logic Optimization:                  2.74
+  Mapping Optimization:                3.71
+  -----------------------------------------
+  Overall Compile Time:               20.01
+  Overall Compile Wall Clock Time:    21.75
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+ 
+****************************************
+Report : cell
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:07 2022
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U198                      AO3SVTX1        CORE90GPSVT     6.585600  
+U199                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U200                      IVSVTX0H        CORE90GPSVT     2.195200  
+U201                      AO11NSVTX1      CORE90GPSVT     10.976000 
+U202                      IVSVTX0H        CORE90GPSVT     2.195200  
+U203                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U204                      IVSVTX0H        CORE90GPSVT     2.195200  
+U205                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U206                      AO4SVTX1        CORE90GPSVT     6.585600  
+U207                      AO4SVTX1        CORE90GPSVT     6.585600  
+U208                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U209                      IVSVTX2         CORE90GPSVT     3.292800  
+U210                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U211                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U212                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U213                      AO7SVTX1        CORE90GPSVT     4.390400  
+U214                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U215                      IVSVTX4         CORE90GPSVT     4.390400  
+U216                      NR2SVTX4        CORE90GPSVT     6.585600  
+U217                      IVSVTX0H        CORE90GPSVT     2.195200  
+U218                      NR2ASVTX4       CORE90GPSVT     8.780800  
+U219                      IVSVTX0H        CORE90GPSVT     2.195200  
+U220                      OR2BSVTX4       CORE90GPSVT     8.780800  
+U221                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U222                      NR2ASVTX2       CORE90GPSVT     5.488000  
+U223                      IVSVTX2         CORE90GPSVT     3.292800  
+U224                      IVSVTX0H        CORE90GPSVT     2.195200  
+U225                      NR4SVTX2        CORE90GPSVT     6.585600  
+U226                      IVSVTX0H        CORE90GPSVT     2.195200  
+U227                      IVSVTX0H        CORE90GPSVT     2.195200  
+U228                      AO4SVTX1        CORE90GPSVT     6.585600  
+U229                      NR2ASVTX2       CORE90GPSVT     5.488000  
+U230                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U231                      IVSVTX4         CORE90GPSVT     4.390400  
+U232                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U233                      AO3SVTX4        CORE90GPSVT     13.171200 
+U234                      F_ND2SVTX0H     CORX90GPSVT     4.390400  
+U235                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U236                      ND2ASVTX4       CORE90GPSVT     8.780800  
+U237                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U238                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U239                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U240                      B_ND2SVTX1      CORX90GPSVT     4.390400  
+U241                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U242                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U243                      AO1SVTX2        CORE90GPSVT     7.683200  
+U244                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U245                      AO17SVTX2       CORE90GPSVT     6.585600  
+U246                      IVSVTX2         CORE90GPSVT     3.292800  
+U247                      ND2ASVTX6       CORE90GPSVT     12.073600 
+U248                      AO6ASVTX2       CORE90GPSVT     7.683200  
+U249                      NR2ASVTX4       CORE90GPSVT     8.780800  
+U250                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U251                      NR4SVTX4        CORE90GPSVT     10.976000 
+U252                      ND3SVTX2        CORE90GPSVT     5.488000  
+U253                      CTMUX21NSVTX4   CORX90GPSVT     13.171200 
+U254                      AO7SVTX4        CORE90GPSVT     10.976000 
+U255                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U256                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U257                      IVSVTX10        CORE90GPSVT     8.780800  
+U258                      ND3SVTX2        CORE90GPSVT     5.488000  
+U259                      IVSVTX2         CORE90GPSVT     3.292800  
+U260                      F_ND2ASVTX2     CORX90GPSVT     5.488000  
+U261                      IVSVTX2         CORE90GPSVT     3.292800  
+U262                      IVSVTX2         CORE90GPSVT     3.292800  
+U263                      MUX21NSVTX1     CORE90GPSVT     7.683200  
+U264                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U265                      AO1SVTX2        CORE90GPSVT     7.683200  
+U266                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U267                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U268                      CTIVSVTX2       CORX90GPSVT     3.292800  
+U269                      AO7SVTX2        CORE90GPSVT     6.585600  
+U270                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U271                      CTIVSVTX2       CORX90GPSVT     3.292800  
+U272                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U273                      B_ND2SVTX2      CORX90GPSVT     4.390400  
+U274                      NR3SVTX2        CORE90GPSVT     5.488000  
+U275                      AO4SVTX2        CORE90GPSVT     7.683200  
+U276                      ND3SVTX2        CORE90GPSVT     5.488000  
+U277                      IVSVTX8         CORE90GPSVT     7.683200  
+U278                      F_ND2SVTX1      CORX90GPSVT     4.390400  
+U279                      B_ND2SVTX1      CORX90GPSVT     4.390400  
+U280                      NR4SVTX4        CORE90GPSVT     10.976000 
+U281                      OR4ABCDSVTX8    CORE90GPSVT     14.268800 
+U282                      CTMUX21NSVTX4   CORX90GPSVT     13.171200 
+U283                      MUX22SVTX2      CORX90GPSVT     13.171200 
+U284                      NR2ASVTX6       CORE90GPSVT     10.976000 
+U285                      AO39SVTX2       CORX90GPSVT     10.976000 
+U286                      AO7SVTX2        CORE90GPSVT     6.585600  
+U287                      NR2ASVTX6       CORE90GPSVT     10.976000 
+U288                      MUX21NSVTX4     CORE90GPSVT     16.464001 
+U289                      AO2SVTX1        CORE90GPSVT     6.585600  
+U290                      CTMUX21NSVTX4   CORX90GPSVT     13.171200 
+U291                      AO7SVTX2        CORE90GPSVT     6.585600  
+U292                      AO11NSVTX1      CORE90GPSVT     10.976000 
+U293                      AO7SVTX2        CORE90GPSVT     6.585600  
+U294                      CTMUX21NSVTX4   CORX90GPSVT     13.171200 
+U295                      IVSVTX0H        CORE90GPSVT     2.195200  
+U296                      AO4SVTX1        CORE90GPSVT     6.585600  
+U297                      F_ND2SVTX0H     CORX90GPSVT     4.390400  
+U298                      AO7ABSVTX1      CORE90GPSVT     6.585600  
+U299                      F_ND2SVTX0H     CORX90GPSVT     4.390400  
+U300                      AO2SVTX1        CORE90GPSVT     6.585600  
+U301                      AO7SVTX1        CORE90GPSVT     4.390400  
+U302                      AO2SVTX1        CORE90GPSVT     6.585600  
+U303                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U304                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U305                      AO7SVTX1        CORE90GPSVT     4.390400  
+U306                      AO4SVTX1        CORE90GPSVT     6.585600  
+U307                      AO6ABSVTX1      CORE90GPSVT     6.585600  
+U308                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U309                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U310                      F_ND2SVTX0H     CORX90GPSVT     4.390400  
+U311                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U312                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U313                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U314                      IVSVTX4         CORE90GPSVT     4.390400  
+U315                      AO7SVTX1        CORE90GPSVT     4.390400  
+U316                      IVSVTX4         CORE90GPSVT     4.390400  
+U317                      B_ND2SVTX0H     CORX90GPSVT     4.390400  
+U318                      ND3SVTX1        CORE90GPSVT     5.488000  
+U319                      AO6SVTX1        CORE90GPSVT     5.488000  
+U320                      AO17NSVTX2      CORE90GPSVT     9.878400  
+U321                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U322                      AO2SVTX1        CORE90GPSVT     6.585600  
+U323                      IVSVTX2         CORE90GPSVT     3.292800  
+U324                      IVSVTX2         CORE90GPSVT     3.292800  
+U325                      NR2SVTX2        CORE90GPSVT     4.390400  
+U326                      ND3SVTX4        CORE90GPSVT     8.780800  
+U327                      IVSVTX2         CORE90GPSVT     3.292800  
+U328                      NR2SVTX2        CORE90GPSVT     4.390400  
+U329                      ND3SVTX2        CORE90GPSVT     5.488000  
+U330                      IVSVTX2         CORE90GPSVT     3.292800  
+U331                      IVSVTX2         CORE90GPSVT     3.292800  
+U332                      NR2SVTX2        CORE90GPSVT     4.390400  
+U333                      ND3SVTX4        CORE90GPSVT     8.780800  
+U334                      NR2SVTX2        CORE90GPSVT     4.390400  
+U335                      ND3ABSVTX4      CORE90GPSVT     9.878400  
+U336                      OR2SVTX4        CORE90GPSVT     7.683200  
+U337                      ND4ABSVTX8      CORE90GPSVT     20.854401 
+U338                      IVSVTX0H        CORE90GPSVT     2.195200  
+U339                      ND4SVTX1        CORE90GPSVT     5.488000  
+U340                      NR3SVTX6        CORE90GPSVT     12.073600 
+U341                      ND2ASVTX8       CORE90GPSVT     13.171200 
+U342                      IVSVTX0H        CORE90GPSVT     2.195200  
+U343                      IVSVTX0H        CORE90GPSVT     2.195200  
+U344                      IVSVTX0H        CORE90GPSVT     2.195200  
+U345                      AO7SVTX1        CORE90GPSVT     4.390400  
+U346                      AO3SVTX1        CORE90GPSVT     6.585600  
+U347                      AO4SVTX1        CORE90GPSVT     6.585600  
+U348                      AO8SVTX1        CORE90GPSVT     6.585600  
+U349                      AO3SVTX1        CORE90GPSVT     6.585600  
+U350                      IVSVTX2         CORE90GPSVT     3.292800  
+U351                      AO7SVTX4        CORE90GPSVT     10.976000 
+U352                      AO4SVTX1        CORE90GPSVT     6.585600  
+U353                      IVSVTX2         CORE90GPSVT     3.292800  
+U354                      AN2SVTX4        CORE90GPSVT     7.683200  
+U355                      AO2NSVTX1       CORE90GPSVT     7.683200  
+U356                      IVSVTX0H        CORE90GPSVT     2.195200  
+U357                      IVSVTX0H        CORE90GPSVT     2.195200  
+U358                      AO4SVTX1        CORE90GPSVT     6.585600  
+U359                      AO6SVTX1        CORE90GPSVT     5.488000  
+U360                      AO6SVTX1        CORE90GPSVT     5.488000  
+U361                      NR4SVTX2        CORE90GPSVT     6.585600  
+U362                      AN3SVTX4        CORE90GPSVT     8.780800  
+U363                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U364                      IVSVTX2         CORE90GPSVT     3.292800  
+U365                      IVSVTX0H        CORE90GPSVT     2.195200  
+U366                      IVSVTX0H        CORE90GPSVT     2.195200  
+U367                      AO4SVTX1        CORE90GPSVT     6.585600  
+U368                      IVSVTX0H        CORE90GPSVT     2.195200  
+U369                      IVSVTX0H        CORE90GPSVT     2.195200  
+U370                      AO4SVTX1        CORE90GPSVT     6.585600  
+U371                      IVSVTX0H        CORE90GPSVT     2.195200  
+U372                      AO4SVTX1        CORE90GPSVT     6.585600  
+U373                      IVSVTX2         CORE90GPSVT     3.292800  
+U374                      AN2SVTX4        CORE90GPSVT     7.683200  
+U375                      NR2SVTX2        CORE90GPSVT     4.390400  
+U376                      IVSVTX0H        CORE90GPSVT     2.195200  
+U377                      AO6SVTX1        CORE90GPSVT     5.488000  
+U378                      ND2SVTX4        CORE90GPSVT     6.585600  
+U379                      AO6SVTX1        CORE90GPSVT     5.488000  
+U380                      IVSVTX0H        CORE90GPSVT     2.195200  
+U381                      IVSVTX0H        CORE90GPSVT     2.195200  
+U382                      IVSVTX0H        CORE90GPSVT     2.195200  
+U383                      AO7SVTX1        CORE90GPSVT     4.390400  
+U384                      IVSVTX0H        CORE90GPSVT     2.195200  
+U385                      AO7SVTX2        CORE90GPSVT     6.585600  
+U386                      IVSVTX0H        CORE90GPSVT     2.195200  
+U387                      IVSVTX0H        CORE90GPSVT     2.195200  
+U388                      AO7SVTX1        CORE90GPSVT     4.390400  
+U389                      AO11SVTX2       CORE90GPSVT     12.073600 
+U390                      AO2ABSVTX1      CORX90GPSVT     7.683200  
+U391                      AO4SVTX1        CORE90GPSVT     6.585600  
+U392                      AO11NSVTX2      CORE90GPSVT     12.073600 
+U393                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U394                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U395                      AO39SVTX1       CORX90GPSVT     10.976000 
+U396                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U397                      AO39SVTX2       CORX90GPSVT     10.976000 
+U398                      AO7SVTX1        CORE90GPSVT     4.390400  
+U399                      AO11NSVTX1      CORE90GPSVT     10.976000 
+U400                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U401                      AO7SVTX2        CORE90GPSVT     6.585600  
+U402                      AO4SVTX1        CORE90GPSVT     6.585600  
+U403                      AO11SVTX2       CORE90GPSVT     12.073600 
+U404                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U405                      AO2ABSVTX1      CORX90GPSVT     7.683200  
+U406                      IVSVTX0H        CORE90GPSVT     2.195200  
+U407                      AO4SVTX1        CORE90GPSVT     6.585600  
+U408                      AO4SVTX1        CORE90GPSVT     6.585600  
+U409                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U410                      IVSVTX0H        CORE90GPSVT     2.195200  
+U411                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U412                      AO2SVTX2        CORE90GPSVT     7.683200  
+U413                      AO7SVTX4        CORE90GPSVT     10.976000 
+U414                      F_MUX21NSVTX0H  CORX90GPSVT     6.585600  
+U415                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U416                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U417                      F_AO2SVTX1      CORX90GPSVT     6.585600  
+U418                      AO3SVTX4        CORE90GPSVT     13.171200 
+U419                      AO7SVTX4        CORE90GPSVT     10.976000 
+U420                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U421                      IVSVTX0H        CORE90GPSVT     2.195200  
+U422                      NR3SVTX2        CORE90GPSVT     5.488000  
+U423                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U424                      F_MUX21NSVTX1   CORX90GPSVT     7.683200  
+U425                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+U426                      IVSVTX0H        CORE90GPSVT     2.195200  
+U427                      AO7SVTX1        CORE90GPSVT     4.390400  
+U428                      AO6SVTX1        CORE90GPSVT     5.488000  
+U429                      AO7SVTX1        CORE90GPSVT     4.390400  
+U430                      AO11SVTX2       CORE90GPSVT     12.073600 
+U431                      IVSVTX0H        CORE90GPSVT     2.195200  
+U432                      AO6SVTX1        CORE90GPSVT     5.488000  
+U433                      AO7SVTX1        CORE90GPSVT     4.390400  
+U434                      NR2ASVTX1       CORE90GPSVT     4.390400  
+U435                      AO1SVTX1        CORE90GPSVT     6.585600  
+U436                      AO7SVTX1        CORE90GPSVT     4.390400  
+U437                      IVSVTX0H        CORE90GPSVT     2.195200  
+U438                      AO7SVTX1        CORE90GPSVT     4.390400  
+U439                      AO6SVTX1        CORE90GPSVT     5.488000  
+U440                      AO7SVTX1        CORE90GPSVT     4.390400  
+U441                      AO6SVTX1        CORE90GPSVT     5.488000  
+U442                      AO11SVTX2       CORE90GPSVT     12.073600 
+U443                      CTMUX21NSVTX4   CORX90GPSVT     13.171200 
+U444                      MUX21NSVTX2     CORE90GPSVT     8.780800  
+re_map                    remap                           4600.041549
+                                                                    h
+--------------------------------------------------------------------------------
+Total 248 cells                                           6170.707127
+1
+ 
+****************************************
+Report : compile_options
+Design : remap_top
+Version: J-2014.09-SP2
+Date   : Sun Apr 17 19:25:08 2022
+****************************************
+
+Design                                   Compile Option         Value
+--------------------------------------------------------------------------------
+remap_top                                flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+                                         isolate_port           disabled
+
+remap                                    flatten                false
+                                         structure              true
+                                         structure_boolean      false
+                                         structure_timing       true
+--------------------------------------------------------------------------------
+1
