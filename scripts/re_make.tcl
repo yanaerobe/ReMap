@@ -1,4 +1,4 @@
-# For range mapping synthesis
+# For remap synthesis
 # read files
 read_verilog ./rtl/defines.v
 # read_verilog ./rtl/re_data.v
