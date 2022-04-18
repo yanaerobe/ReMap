@@ -67,12 +67,12 @@ module remap(
     wire [`M1_LENGTH - 1 : 0] adder; 
 
     assign adder = 
-        ({`M1_LENGTH{piece[0]}} & (m1 + m1>>2)) | 
-        ({`M1_LENGTH{piece[1]}} & (m1 + m1>>2 + m1>>5)) | 
-        ({`M1_LENGTH{piece[2]}} & (m1) ) | 
-        ({`M1_LENGTH{piece[3]}} & (m1 + m1>>5 + m1>>6)) | 
-        ({`M1_LENGTH{piece[4]}} & (m1 - m1>>4 - m1>>5 - m1>>6)) | 
-        ({`M1_LENGTH{piece[5]}} & (m1 - m1>>2 + m1>>6)); 
+        ( {`M1_LENGTH{piece[0]}} & ((m1) + (m1>>2)) ) | 
+        ( {`M1_LENGTH{piece[1]}} & ((m1) + (m1>>2) + (m1>>5)) ) | 
+        ( {`M1_LENGTH{piece[2]}} & ((m1)) ) | 
+        ( {`M1_LENGTH{piece[3]}} & ((m1) + (m1>>5) + (m1>>6)) ) | 
+        ( {`M1_LENGTH{piece[4]}} & ((m1) - (m1>>4) - (m1>>5) - (m1>>6)) ) | 
+        ( {`M1_LENGTH{piece[5]}} & ((m1) - (m1>>2) + (m1>>6)) ); 
 
     // add adder 2
     wire [`M1_LENGTH - 1 : 0] m2_r; 
