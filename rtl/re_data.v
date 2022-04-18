@@ -4,123 +4,18 @@ assign node[0] = 28'h0000000;
 assign intcpt[0] = 28'h0000000; 
 
 assign node[1] = 28'h00CCCCC; 
-assign intcpt[1] = 28'h0020005; 
+assign intcpt[1] = 28'h00CBFF4; 
 
-assign node[2] = 28'h0199999; 
-assign intcpt[2] = 28'h003FFFC; 
+assign node[2] = 28'h2000000; 
+assign intcpt[2] = 28'h092FFFA; 
 
-assign node[3] = 28'h0266666; 
-assign intcpt[3] = 28'h0060001; 
+assign node[3] = 28'h2100000; 
+assign intcpt[3] = 28'h0831A3E; 
 
-assign node[4] = 28'h0333333; 
-assign intcpt[4] = 28'h007FFF9; 
+assign node[4] = 28'h4000000; 
+assign intcpt[4] = 28'h1234656; 
 
-assign node[5] = 28'h0400000; 
-assign intcpt[5] = 28'h009FFFE; 
+assign node[5] = 28'h6000000; 
+assign intcpt[5] = 28'h1E0C862; 
 
-assign node[6] = 28'h04CCCCC; 
-assign intcpt[6] = 28'h00C0003; 
-
-assign node[7] = 28'h0599999; 
-assign intcpt[7] = 28'h00DFFFA; 
-
-assign node[8] = 28'h0666666; 
-assign intcpt[8] = 28'h0100000; 
-
-assign node[9] = 28'h0733333; 
-assign intcpt[9] = 28'h0120005; 
-
-assign node[10] = 28'h0800000; 
-assign intcpt[10] = 28'h013FFFC; 
-
-assign node[11] = 28'h08CCCCC; 
-assign intcpt[11] = 28'h0160001; 
-
-assign node[12] = 28'h0999999; 
-assign intcpt[12] = 28'h017FFF9; 
-
-assign node[13] = 28'h0CCCCCC; 
-assign intcpt[13] = 28'h01B0000; 
-
-assign node[14] = 28'h1CCCCCC; 
-assign intcpt[14] = 28'h014FFFF; 
-
-assign node[15] = 28'h2000000; 
-assign intcpt[15] = 28'h092FFFA; 
-
-assign node[16] = 28'h2100000; 
-assign intcpt[16] = 28'h094FFFF; 
-
-assign node[17] = 28'h2200000; 
-assign intcpt[17] = 28'h0970004; 
-
-assign node[18] = 28'h2300000; 
-assign intcpt[18] = 28'h098FFFB; 
-
-assign node[19] = 28'h2400000; 
-assign intcpt[19] = 28'h09B0000; 
-
-assign node[20] = 28'h2500000; 
-assign intcpt[20] = 28'h09D0005; 
-
-assign node[21] = 28'h2600000; 
-assign intcpt[21] = 28'h09EFFFD; 
-
-assign node[22] = 28'h2700000; 
-assign intcpt[22] = 28'h0A10002; 
-
-assign node[23] = 28'h2800000; 
-assign intcpt[23] = 28'h0A2FFFA; 
-
-assign node[24] = 28'h2900000; 
-assign intcpt[24] = 28'h0A4FFFF; 
-
-assign node[25] = 28'h2A00000; 
-assign intcpt[25] = 28'h0A70004; 
-
-assign node[26] = 28'h2B00000; 
-assign intcpt[26] = 28'h0A8FFFB; 
-
-assign node[27] = 28'h2C00000; 
-assign intcpt[27] = 28'h0AB0000; 
-
-assign node[28] = 28'h3000000; 
-assign intcpt[28] = 28'h0ADFFFA; 
-
-assign node[29] = 28'h4000000; 
-assign intcpt[29] = 28'h12DFFFA; 
-
-assign node[30] = 28'h4124924; 
-assign intcpt[30] = 28'h1300000; 
-
-assign node[31] = 28'h4249249; 
-assign intcpt[31] = 28'h1320005; 
-
-assign node[32] = 28'h436DB6D; 
-assign intcpt[32] = 28'h133FFFC; 
-
-assign node[33] = 28'h4492492; 
-assign intcpt[33] = 28'h134FFFF; 
-
-assign node[34] = 28'h4924924; 
-assign intcpt[34] = 28'h138FFFB; 
-
-assign node[35] = 28'h6000000; 
-assign intcpt[35] = 28'h1F4FFFF; 
-
-assign node[36] = 28'h6155555; 
-assign intcpt[36] = 28'h1F70004; 
-
-assign node[37] = 28'h62AAAAA; 
-assign intcpt[37] = 28'h1F8FFFB; 
-
-assign node[38] = 28'h6400000; 
-assign intcpt[38] = 28'h1FB0000; 
-
-assign node[39] = 28'h6555555; 
-assign intcpt[39] = 28'h1FD0005; 
-
-assign node[40] = 28'h6AAAAAA; 
-assign intcpt[40] = 28'h2000000; 
-
-assign node[41] = 28'h8000000; 
+assign node[6] = 28'h8000000; 
