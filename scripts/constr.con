@@ -33,4 +33,7 @@ set_load $MAX_OUTPUT_LOAD [all_outputs]
 set_drive 1.5 [all_inputs]
 
 set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
-#set_wire_load_model -name $WIRELOAD_MODEL 
+#set_wire_load_model -name $WIRELOAD_MODEL
+
+set_max_area 5000
+set_max_delay 2 -to [all_outputs]

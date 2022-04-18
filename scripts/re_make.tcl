@@ -20,7 +20,6 @@ source "${script_path}/constr.con"
 # design constraints 
 set_input_delay  $INPUT_DELAY -clock $CLK_PORT [all_inputs]
 set_output_delay $OUTPUT_DELAY -clock $CLK_PORT [all_outputs]
-set_max_area 5000
 
 # ungroup DesignWare parts 
 set designware_cells [get_cells -filter "@is_oper==true" *]
