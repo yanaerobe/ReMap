@@ -1,3 +1,0 @@
-makenode; 
-FindCoefficients; 
-ReCheckAlgo; 
