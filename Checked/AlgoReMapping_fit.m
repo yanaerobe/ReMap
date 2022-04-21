@@ -6,7 +6,7 @@ function rslt = AlgoReMapping_fit(num)
 makeremap; 
 
 %fid = fopen('FindCoefficients.txt', 'r'); 
-%coef = fscanf(fid, '%f', [2, 17]); 
+%coef = fscanf(fid, '%f', [2, 13]); 
 
 [k, m] = KeyValues(num); 
 
