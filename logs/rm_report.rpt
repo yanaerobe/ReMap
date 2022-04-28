@@ -4,7 +4,7 @@
 Report : qor
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:10 2022
+Date   : Thu Apr 28 15:44:05 2022
 ****************************************
 
 
@@ -65,11 +65,11 @@ Date   : Mon Apr 18 19:50:10 2022
   Compile CPU Statistics
   -----------------------------------------
   Resource Sharing:                    0.48
-  Logic Optimization:                 36.87
-  Mapping Optimization:              122.87
+  Logic Optimization:                 36.58
+  Mapping Optimization:              120.75
   -----------------------------------------
-  Overall Compile Time:              170.46
-  Overall Compile Wall Clock Time:   171.95
+  Overall Compile Time:              167.98
+  Overall Compile Wall Clock Time:   169.56
 
   --------------------------------------------------------------------
 
@@ -88,7 +88,7 @@ Report : constraint
         -all_violators
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:11 2022
+Date   : Thu Apr 28 15:44:05 2022
 ****************************************
 
 
@@ -134,6 +134,15 @@ Date   : Mon Apr 18 19:50:11 2022
    m_rangemapping            5000.00       15072.24       -10072.24 (VIOLATED)
 
 
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   m_rangemapping               0.00       3439492096.00  -3439492096.00
+                                                                    (VIOLATED)
+
+
 1
  
 ****************************************
@@ -141,7 +150,7 @@ Report : power
         -analysis_effort low
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:11 2022
+Date   : Thu Apr 28 15:44:06 2022
 ****************************************
 
 
@@ -195,7 +204,7 @@ Total              0.3495 mW         0.3296 mW     3.8853e+09 pW         4.5644 
 Report : area
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:11 2022
+Date   : Thu Apr 28 15:44:06 2022
 ****************************************
 
 Library(s) Used:
@@ -226,7 +235,7 @@ Total area:                 undefined
 Report : design
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:11 2022
+Date   : Thu Apr 28 15:44:06 2022
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -316,10 +325,952 @@ Design Parameters:
 1
  
 ****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 15
+Design : m_rangemapping
+Version: J-2014.09-SP2
+Date   : Thu Apr 28 15:44:06 2022
+****************************************
+
+Operating Conditions: Worst   Library: CORE90GPSVT
+Wire Load Model Mode: enclosed
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[24] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1369/Z (EN3SVTX8)                       0.17       2.21 f
+  U1176/Z (ND2SVTX8)                       0.04       2.25 r
+  U1636/Z (AO7SVTX8)                       0.05       2.30 f
+  U1607/Z (AO6SVTX8)                       0.07       2.36 r
+  U1635/Z (IVSVTX10)                       0.04       2.40 f
+  U1869/Z (AO6SVTX8)                       0.04       2.44 r
+  U1870/Z (EOSVTX8)                        0.10       2.54 f
+  O[24] (out)                              0.00       2.54 f
+  data arrival time                                   2.54
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.54
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.29
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[26] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1117/Z (ND3SVTX8)                       0.03       2.00 f
+  U921/Z (ND3SVTX6)                        0.05       2.05 r
+  U1847/Z (FAS1SVTX4)                      0.12       2.17 f
+  U1108/Z (NR2SVTX4)                       0.06       2.23 r
+  U1871/Z (NR2SVTX4)                       0.07       2.30 f
+  U778/Z (AO6SVTX6)                        0.06       2.35 r
+  U1590/Z (AO7SVTX8)                       0.06       2.41 f
+  U1116/Z (ND2ASVTX8)                      0.04       2.45 r
+  U1910/Z (EOSVTX8)                        0.09       2.54 f
+  O[26] (out)                              0.00       2.54 f
+  data arrival time                                   2.54
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.54
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.29
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[22] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1369/Z (EN3SVTX8)                       0.17       2.21 f
+  U1176/Z (ND2SVTX8)                       0.04       2.25 r
+  U1636/Z (AO7SVTX8)                       0.05       2.30 f
+  U1607/Z (AO6SVTX8)                       0.07       2.36 r
+  U1635/Z (IVSVTX10)                       0.04       2.40 f
+  U1732/Z (AO6CSVTX8)                      0.04       2.44 r
+  U1879/Z (EOSVTX8)                        0.10       2.54 f
+  O[22] (out)                              0.00       2.54 f
+  data arrival time                                   2.54
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.54
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.29
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[23] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1369/Z (EN3SVTX8)                       0.17       2.21 f
+  U1176/Z (ND2SVTX8)                       0.04       2.25 r
+  U1636/Z (AO7SVTX8)                       0.05       2.30 f
+  U1607/Z (AO6SVTX8)                       0.07       2.36 r
+  U1635/Z (IVSVTX10)                       0.04       2.40 f
+  U1726/Z (AO6CSVTX8)                      0.04       2.44 r
+  U1876/Z (EOSVTX8)                        0.10       2.53 f
+  O[23] (out)                              0.00       2.53 f
+  data arrival time                                   2.53
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.53
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.28
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[21] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1642/Z (IVSVTX2)                        0.04       2.08 f
+  U1865/Z (ND2SVTX4)                       0.03       2.12 r
+  U664/Z (ND2SVTX6)                        0.03       2.14 f
+  U1624/Z (AO7ABSVTX4)                     0.05       2.19 r
+  U1866/Z (NR2SVTX8)                       0.06       2.25 f
+  U1868/Z (NR2SVTX6)                       0.06       2.31 r
+  U1607/Z (AO6SVTX8)                       0.05       2.36 f
+  U1635/Z (IVSVTX10)                       0.04       2.40 r
+  U1299/Z (ENSVTX4)                        0.13       2.53 f
+  O[21] (out)                              0.00       2.53 f
+  data arrival time                                   2.53
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.53
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.28
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[25] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1642/Z (IVSVTX2)                        0.04       2.08 f
+  U1865/Z (ND2SVTX4)                       0.03       2.12 r
+  U664/Z (ND2SVTX6)                        0.03       2.14 f
+  U1624/Z (AO7ABSVTX4)                     0.05       2.19 r
+  U1866/Z (NR2SVTX8)                       0.06       2.25 f
+  U1636/Z (AO7SVTX8)                       0.05       2.30 r
+  U779/Z (AO6SVTX6)                        0.06       2.36 f
+  U1590/Z (AO7SVTX8)                       0.05       2.41 r
+  U1322/Z (ENSVTX4)                        0.12       2.53 f
+  O[25] (out)                              0.00       2.53 f
+  data arrival time                                   2.53
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.53
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.28
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[20] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1642/Z (IVSVTX2)                        0.04       2.08 f
+  U1865/Z (ND2SVTX4)                       0.03       2.12 r
+  U664/Z (ND2SVTX6)                        0.03       2.14 f
+  U1624/Z (AO7ABSVTX4)                     0.05       2.19 r
+  U1866/Z (NR2SVTX8)                       0.06       2.25 f
+  U1701/Z (IVSVTX0H)                       0.08       2.33 r
+  U1881/Z (ND2SVTX2)                       0.07       2.40 f
+  U1619/Z (ENSVTX8)                        0.12       2.52 f
+  O[20] (out)                              0.00       2.52 f
+  data arrival time                                   2.52
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.52
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.27
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[19] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1371/Z (ND2ASVTX8)                      0.03       2.01 f
+  U1301/Z (NR2ASVTX8)                      0.04       2.05 r
+  U1369/Z (EN3SVTX8)                       0.17       2.21 f
+  U1867/Z (NR2SVTX8)                       0.04       2.26 r
+  U604/Z (CTBUFSVTX8)                      0.06       2.32 r
+  U605/Z (IVSVTX4)                         0.02       2.34 f
+  U1882/Z (ND2SVTX4)                       0.03       2.37 r
+  U606/Z (EOSVTX8)                         0.10       2.47 f
+  O[19] (out)                              0.00       2.47 f
+  data arrival time                                   2.47
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.47
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.22
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[18] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U335/Z (BFSVTX10)                        0.08       2.02 f
+  U322/Z (AO7ASVTX6)                       0.05       2.06 r
+  U1231/Z (EO3SVTX8)                       0.11       2.18 f
+  U846/Z (NR2SVTX6)                        0.05       2.22 r
+  U845/Z (IVSVTX2)                         0.04       2.26 f
+  U844/Z (B_ND2SVTX2)                      0.03       2.29 r
+  U1320/Z (F_ENSVTX2)                      0.12       2.41 f
+  O[18] (out)                              0.00       2.41 f
+  data arrival time                                   2.41
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.41
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.16
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[17] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1569/Z (AO6SVTX8)                       0.05       1.70 r
+  U1836/Z (AO17SVTX8)                      0.06       1.76 f
+  U1837/Z (ND3SVTX8)                       0.04       1.80 r
+  U1838/Z (ND2SVTX6)                       0.03       1.84 f
+  U1839/Z (ENSVTX8)                        0.10       1.94 f
+  U1168/Z (IVSVTX12)                       0.03       1.97 r
+  U1156/Z (ND2SVTX4)                       0.04       2.01 f
+  U663/Z (IVSVTX10)                        0.04       2.05 r
+  U327/Z (ND2ASVTX6)                       0.03       2.08 f
+  U667/Z (AO7SVTX6)                        0.05       2.12 r
+  U1862/Z (NR2SVTX4)                       0.04       2.17 f
+  U915/Z (IVSVTX1)                         0.05       2.21 r
+  U1883/Z (ND2SVTX2)                       0.05       2.27 f
+  U1884/Z (ENSVTX4)                        0.11       2.38 f
+  O[17] (out)                              0.00       2.38 f
+  data arrival time                                   2.38
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.38
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.13
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[15] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1033/Z (NR2SVTX2)                       0.08       1.02 r
+  U1144/Z (NR2SVTX8)                       0.05       1.08 f
+  U1063/Z (ND2SVTX6)                       0.03       1.11 r
+  U1200/Z (NR2SVTX6)                       0.04       1.14 f
+  U1776/Z (ND3SVTX8)                       0.05       1.19 r
+  U629/Z (NR3SVTX6)                        0.07       1.26 f
+  U628/Z (ND3SVTX8)                        0.05       1.31 r
+  U1125/Z (NR2SVTX8)                       0.05       1.35 f
+  U1376/Z (ENSVTX8)                        0.09       1.44 f
+  U671/Z (ND2ASVTX8)                       0.04       1.47 r
+  U1735/Z (ND3ASVTX8)                      0.04       1.51 f
+  U1835/Z (ND2ASVTX8)                      0.03       1.54 r
+  U1670/Z (AO7SVTX8)                       0.04       1.58 f
+  U948/Z (IVSVTX4)                         0.03       1.61 r
+  U1292/Z (AO7SVTX8)                       0.04       1.65 f
+  U1886/Z (BFSVTX1)                        0.12       1.78 f
+  U1887/Z (IVSVTX0H)                       0.07       1.85 r
+  U1888/Z (AO7SVTX1)                       0.09       1.94 f
+  U928/Z (AO6SVTX2)                        0.10       2.04 r
+  U927/Z (EOSVTX4)                         0.13       2.18 f
+  O[15] (out)                              0.00       2.18 f
+  data arrival time                                   2.18
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.18
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.93
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[13] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U1266/Z (IVSVTX12)                       0.02       0.68 r
+  U1534/Z (AO7SVTX8)                       0.03       0.72 f
+  U1705/Z (NR3SVTX8)                       0.08       0.79 r
+  U1544/Z (ND2SVTX6)                       0.06       0.86 f
+  U637/Z (IVSVTX12)                        0.05       0.90 r
+  U1217/Z (MUX21SVTX8)                     0.10       1.00 r
+  U1177/Z (AO7ABSVTX8)                     0.07       1.07 r
+  U894/Z (IVSVTX8)                         0.02       1.09 f
+  U1502/Z (ND3SVTX8)                       0.05       1.14 r
+  U1008/Z (ND3ABSVTX8)                     0.12       1.26 r
+  U613/Z (IVSVTX8)                         0.02       1.28 f
+  U1143/Z (ND4SVTX8)                       0.04       1.33 r
+  U1142/Z (ENSVTX8)                        0.11       1.43 f
+  U1582/Z (AO6SVTX8)                       0.04       1.47 r
+  U1432/Z (ND2SVTX6)                       0.04       1.51 f
+  U1408/Z (ND2ASVTX8)                      0.03       1.54 r
+  U316/Z (IVSVTX8)                         0.02       1.57 f
+  U1293/Z (AO7SVTX8)                       0.04       1.61 r
+  U1383/Z (BFSVTX0H)                       0.12       1.73 r
+  U1890/Z (AO7SVTX1)                       0.12       1.84 f
+  U930/Z (AO6SVTX2)                        0.10       1.95 r
+  U1671/Z (EOSVTX4)                        0.13       2.08 f
+  O[13] (out)                              0.00       2.08 f
+  data arrival time                                   2.08
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.08
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.83
+
+
+  Startpoint: N[19] (input port clocked by VCLK)
+  Endpoint: O[9] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 f
+  N[19] (in)                               0.01       0.51 f
+  U1464/Z (NR2SVTX8)                       0.05       0.56 r
+  U1626/Z (ND3SVTX8)                       0.05       0.61 f
+  U1751/Z (NR2SVTX8)                       0.04       0.65 r
+  U1235/Z (NR2ASVTX8)                      0.09       0.74 r
+  U1705/Z (NR3SVTX8)                       0.05       0.79 f
+  U1544/Z (ND2SVTX6)                       0.06       0.85 r
+  U755/Z (IVSVTX4)                         0.04       0.90 f
+  U1051/Z (IVSVTX6)                        0.03       0.92 r
+  U1311/Z (MUX21NSVTX8)                    0.07       0.99 f
+  U705/Z (ND2SVTX4)                        0.04       1.04 r
+  U704/Z (ND2ASVTX8)                       0.03       1.07 f
+  U1065/Z (ND3SVTX4)                       0.07       1.14 r
+  U1462/Z (NR2SVTX8)                       0.07       1.21 f
+  U706/Z (ND2ASVTX8)                       0.04       1.25 r
+  U1445/Z (IVSVTX4)                        0.03       1.28 f
+  U1818/Z (ND2SVTX6)                       0.04       1.32 r
+  U1401/Z (ENSVTX8)                        0.08       1.40 r
+  U388/Z (ND2ASVTX6)                       0.03       1.44 f
+  U707/Z (ND3SVTX8)                        0.05       1.49 r
+  U1409/Z (IVSVTX4)                        0.04       1.53 f
+  U1500/Z (AO7SVTX8)                       0.04       1.57 r
+  U1073/Z (AO6SVTX8)                       0.04       1.62 f
+  U1313/Z (BFSVTX1)                        0.12       1.74 f
+  U945/Z (IVSVTX1)                         0.05       1.79 r
+  U1897/Z (AO6SVTX1)                       0.06       1.85 f
+  U1898/Z (AO7SVTX2)                       0.08       1.93 r
+  U859/Z (ENSVTX4)                         0.13       2.06 f
+  O[9] (out)                               0.00       2.06 f
+  data arrival time                                   2.06
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.06
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.81
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[3] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U589/Z (ND2ASVTX6)                       0.03       0.69 r
+  U1281/Z (ND2SVTX6)                       0.03       0.72 f
+  U1444/Z (AO20SVTX8)                      0.06       0.78 r
+  U1536/Z (ND2SVTX8)                       0.05       0.83 f
+  U1597/Z (NR2SVTX8)                       0.06       0.89 r
+  U1599/Z (IVSVTX12)                       0.05       0.94 f
+  U1366/Z (ND2ASVTX8)                      0.05       0.98 r
+  U518/Z (IVSVTX6)                         0.04       1.02 f
+  U1260/Z (ND3ASVTX8)                      0.05       1.07 r
+  U1087/Z (ND3SVTX8)                       0.06       1.13 f
+  U674/Z (IVSVTX4)                         0.03       1.16 r
+  U1062/Z (IVSVTX4)                        0.02       1.18 f
+  U1008/Z (ND3ABSVTX8)                     0.09       1.27 f
+  U702/Z (ENSVTX8)                         0.09       1.35 f
+  U700/Z (AO6SVTX8)                        0.04       1.39 r
+  U1422/Z (ND2SVTX8)                       0.04       1.43 f
+  U1621/Z (ND2SVTX4)                       0.04       1.47 r
+  U363/Z (AO7SVTX6)                        0.05       1.53 f
+  U1037/Z (BFSVTX1)                        0.12       1.65 f
+  U953/Z (IVSVTX1)                         0.05       1.70 r
+  U1907/Z (AO7SVTX1)                       0.08       1.77 f
+  U937/Z (AO6SVTX2)                        0.10       1.87 r
+  U864/Z (EOSVTX4)                         0.13       2.00 f
+  O[3] (out)                               0.00       2.00 f
+  data arrival time                                   2.00
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.00
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.75
+
+
+  Startpoint: N[30] (input port clocked by VCLK)
+  Endpoint: O[12] (output port clocked by VCLK)
+  Path Group: VCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  m_rangemapping     area_12Kto18K         CORE90GPSVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.50       0.50 r
+  N[30] (in)                               0.03       0.53 r
+  U1110/Z (NR2SVTX6)                       0.05       0.58 f
+  U1109/Z (ND2SVTX8)                       0.04       0.63 r
+  U673/Z (IVSVTX12)                        0.03       0.66 f
+  U1266/Z (IVSVTX12)                       0.02       0.68 r
+  U1534/Z (AO7SVTX8)                       0.03       0.72 f
+  U1705/Z (NR3SVTX8)                       0.08       0.79 r
+  U1544/Z (ND2SVTX6)                       0.06       0.86 f
+  U637/Z (IVSVTX12)                        0.05       0.90 r
+  U1217/Z (MUX21SVTX8)                     0.10       1.00 r
+  U1177/Z (AO7ABSVTX8)                     0.07       1.07 r
+  U894/Z (IVSVTX8)                         0.02       1.09 f
+  U1502/Z (ND3SVTX8)                       0.05       1.14 r
+  U1008/Z (ND3ABSVTX8)                     0.12       1.26 r
+  U613/Z (IVSVTX8)                         0.02       1.28 f
+  U1143/Z (ND4SVTX8)                       0.04       1.33 r
+  U1142/Z (ENSVTX8)                        0.11       1.43 f
+  U1582/Z (AO6SVTX8)                       0.04       1.47 r
+  U1432/Z (ND2SVTX6)                       0.04       1.51 f
+  U1408/Z (ND2ASVTX8)                      0.03       1.54 r
+  U316/Z (IVSVTX8)                         0.02       1.57 f
+  U1293/Z (AO7SVTX8)                       0.04       1.61 r
+  U1383/Z (BFSVTX0H)                       0.12       1.73 r
+  U865/Z (IVSVTX1)                         0.06       1.79 f
+  U932/Z (AO6SVTX2)                        0.08       1.87 r
+  U926/Z (EOSVTX4)                         0.13       2.00 f
+  O[12] (out)                              0.00       2.00 f
+  data arrival time                                   2.00
+
+  max_delay                                2.00       2.00
+  clock uncertainty                       -0.25       1.75
+  output external delay                   -0.50       1.25
+  data required time                                  1.25
+  -----------------------------------------------------------
+  data required time                                  1.25
+  data arrival time                                  -2.00
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.75
+
+
+1
+ 
+****************************************
 Report : cell
 Design : m_rangemapping
 Version: J-2014.09-SP2
-Date   : Mon Apr 18 19:50:11 2022
+Date   : Thu Apr 28 15:44:06 2022
 ****************************************
 
 Attributes:
