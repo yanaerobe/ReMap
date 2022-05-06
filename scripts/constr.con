@@ -4,9 +4,9 @@ reset_design
 # clock 
 set CLK_PERIOD 5 
 # set FIX_DELAY 10 
-set CLK_SKEW [expr ($CLK_PERIOD*0.05)] 
-set INPUT_DELAY [expr ($CLK_PERIOD*0.1)] 
-set OUTPUT_DELAY [expr ($CLK_PERIOD*0.1)] 
+set CLK_SKEW [expr ($CLK_PERIOD*0.01)] 
+set INPUT_DELAY [expr ($CLK_PERIOD*0.01)] 
+set OUTPUT_DELAY [expr ($CLK_PERIOD*0.01)] 
 
 ## real clock 
 # omitted, there's definitely no real clock 
@@ -35,5 +35,5 @@ set_drive 1.5 [all_inputs]
 set_driving_cell -lib_cell $DRIVE_CELL [all_inputs]
 #set_wire_load_model -name $WIRELOAD_MODEL
 
-set_max_area 5000
+set_max_area 15000
 set_max_delay 2 -to [all_outputs]
