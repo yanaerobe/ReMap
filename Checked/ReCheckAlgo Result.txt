@@ -25,3 +25,10 @@ Min Negative Error(%)    = -0.0294152400, Input     =         11
 Max Positive Error(%)      = +0.0309057451, Input     =          3
 (1.34)
 
+AlgoMitchell (16-bit) 
+Max Negative Error        = +0.0000000000, Input     =          0
+Max Positive Error          = +0.0860713320, Input     =      23637
+Min Negative Error(%)    = +0.0000000000, Input     =          0
+Max Positive Error(%)      = +5.3605369643, Input     =          3
+(0.48)
+

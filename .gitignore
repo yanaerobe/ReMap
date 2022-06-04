@@ -5,10 +5,12 @@
 *.bak
 
 Checked/experiment.m
+Checked/pp_*
 
 modelsim/
 docs/
 Checked/unused/
+Checked/paperwork/
 alib-52/
 ddc/
 
