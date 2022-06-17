@@ -7,11 +7,11 @@ function ReDataCapture
 
     fprintf('\n 1 : Error of Mitchell Approximation');
     fprintf('\n 2 : Error of Range Mapping (4-region)');
-    fprintf('\n 3 : Error of ReMapping '); 
+    fprintf('\n 3 : Error of ReMap '); 
     fprintf('\n\n');
     fprintf('\n11 : Percentage Error of Mitchell Approximation');
     fprintf('\n12 : Percentage Error of Range Mapping (4-region)');
-    fprintf('\n13 : Percentage Error of ReMapping '); 
+    fprintf('\n13 : Percentage Error of ReMap '); 
     fprintf('\n');
     fprintf('\n0 : Quit');
     fprintf('\n\n');
@@ -44,13 +44,13 @@ function ReDataCapture
                 case {2}
                     Result(i) = AlgoLogarithm(Num(i)) - AlgoRangeMapping4(Num(i));
                 case {3} 
-                    Result(i) = AlgoLogarithm(Num(i)) - AlgoReMapping_fit(Num(i)); 
+                    Result(i) = AlgoLogarithm(Num(i)) - AlgoReMap(Num(i)); 
                 case {11}
                     Result(i) = (AlgoLogarithm(Num(i)) - AlgoMitchell(Num(i))) / Logarithm(Num(i)) * 100;
                 case {12}
                     Result(i) = (AlgoLogarithm(Num(i)) - AlgoRangeMapping4(Num(i))) / AlgoLogarithm(Num(i)) * 100;
                 case {13} 
-                    Result(i) = (AlgoLogarithm(Num(i)) - AlgoReMapping_fit(Num(i))) / AlgoLogarithm(Num(i)) * 100; 
+                    Result(i) = (AlgoLogarithm(Num(i)) - AlgoReMap(Num(i))) / AlgoLogarithm(Num(i)) * 100; 
             end
         end
         fwrite(File, Result, 'float32');                                        %write result into binary file with float32 format
